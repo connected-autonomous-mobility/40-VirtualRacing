@@ -17,6 +17,9 @@ It all started on a parking lot...
 
 ```
 (donkey) rainer@neuron:~/mysim2$ python manage.py drive --model=models/lane_keeper.h5
+
+http://localhost:8887/drive
+local pilot
 ```
 
 ### 4 [Leaderboard](https://aleaderboard.com/w2/b24ffdaf-895c-422f-9aed-c51c4edc4579)
