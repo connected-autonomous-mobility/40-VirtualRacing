@@ -15,5 +15,13 @@ It all started on a parking lot...
 ### 3 sample models
 - [naisy](https://drive.google.com/file/d/1CwBHI4Ms1wphSNg2xyUn7fdYAkepYQSU/view)
 
+```
+(donkey) rainer@neuron:~/mysim2$ python manage.py drive --model=models/lane_keeper.h5
+```
 
 ### 4 [Leaderboard](https://aleaderboard.com/w2/b24ffdaf-895c-422f-9aed-c51c4edc4579)
+
+### 5 twitch.tv channels
+
+[DAVG](https://www.twitch.tv/doavg)
+[Oakland](https://www.twitch.tv/mossmann3333)
