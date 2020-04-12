@@ -7,6 +7,7 @@ It all started on a parking lot...
 
 ### 2 preparation
 
+[Tawn's gist](https://gist.github.com/tawnkramer/6d244090cb8f2af1bc9f6d1ebc0377b1)
 [Ottawa, paulh](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)
 
 
