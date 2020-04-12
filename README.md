@@ -7,7 +7,7 @@ It all started on a parking lot...
 
 ### 2 preparation
 
-[Ottawa, paulh](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)]
+[Ottawa, paulh](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)
 
 
 ### 3 sample models
