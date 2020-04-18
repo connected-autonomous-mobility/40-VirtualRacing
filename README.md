@@ -17,8 +17,10 @@ Thanks a lot, Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Linda 
 - [Ottawa, paulh](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)
 
 
+### 3 [data](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/data)
 
-### 3 sample models
+
+### 4 sample models
 - [naisy](https://drive.google.com/file/d/1CwBHI4Ms1wphSNg2xyUn7fdYAkepYQSU/view)
 
 ```
@@ -28,9 +30,10 @@ http://localhost:8887/drive
 local pilot
 ```
 
-### 4 [Leaderboard](https://aleaderboard.com/w2/b24ffdaf-895c-422f-9aed-c51c4edc4579)
+### 5 [Leaderboard](https://aleaderboard.com/w2/b24ffdaf-895c-422f-9aed-c51c4edc4579)
 
-### 5 twitch.tv channels
+### 6 twitch.tv channels
 
 [DAVG](https://www.twitch.tv/doavg)
 [Oakland](https://www.twitch.tv/mossmann3333)
+[Stuttgart](https://www.twitch.tv/DIYrobocars_stuttgart)
