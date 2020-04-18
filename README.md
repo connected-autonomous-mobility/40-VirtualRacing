@@ -34,6 +34,6 @@ local pilot
 
 ### 6 twitch.tv channels
 
-[DAVG](https://www.twitch.tv/doavg)
-[Oakland](https://www.twitch.tv/mossmann3333)
-[Stuttgart](https://www.twitch.tv/DIYrobocars_stuttgart)
+- [DAVG](https://www.twitch.tv/doavg)
+- [Oakland](https://www.twitch.tv/mossmann3333)
+- [Stuttgart](https://www.twitch.tv/DIYrobocars_stuttgart)
