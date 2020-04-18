@@ -1,6 +1,6 @@
 # Virtual Racing League - Public Version
 
-## Tawn Kramers training advice (~10.000 images)
+## 1 Tawn Kramers training advice (~10.000 images)
 "Here's a few tips on how to train a stable lane keeping driver.
 
 Mix 4 different driving types in different proportions:
