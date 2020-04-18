@@ -1,5 +1,7 @@
 # 40-VirtualRacing
 
+![]()
+
 ### 1 background
 
 It all started on a parking lot...
