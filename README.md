@@ -6,9 +6,10 @@
 
 It all started at a parking lot...
 
-A few guys meet there, discussed after a long meetup eving came up with a crazy idea and made it happening. We met at Maker Faire Bay Area 2019 with more guys from Oakland, Ann Arbor, Detroit, Shenzehn, Stuttgart and many more countries. 
+A few guys meet there, discussed after a long meetup evening came up with a crazy idea and made it happening. We met at Maker Faire Bay Area 2019 with more guys from Oakland, Ann Arbor, [Detroit](https://www.meetup.com/Detroit-Autonomous-Vehicle-Meetup/), [Ottawa](https://www.meetup.com/Ottawa-Autonomous-Vehicle-Group/), Shenzehn, Stuttgart and many more countries. 
 Now we're calling us the ***Parking Lot Nerds*** and are heading towards our new venture: Virtual Autonomous Racing. 
 
+Thx, Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor) and especially Alex (Detroit) for literally driving the extra miles down to Stuttgart and making our journey to Silicon Valley / Maker Faire Bay Area 2019 a once in a life time experience.
 
 ### 2 preparation
 
