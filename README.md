@@ -1,4 +1,4 @@
-# 40-VirtualRacing
+# 40-VirtualRacing: The Parking Lot Nerds
 
 ![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1774_115.png)
 
