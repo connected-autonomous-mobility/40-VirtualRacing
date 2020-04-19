@@ -14,6 +14,9 @@ Thanks a lot to Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Lind
 ![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png)
 ![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png)
 
+<img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png" alt="drawing" width="200"/>
+<img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png" alt="drawing" width="200"/>
+
 ### 2 preparation
 
 - [Tawn's gist](https://gist.github.com/tawnkramer/6d244090cb8f2af1bc9f6d1ebc0377b1)
