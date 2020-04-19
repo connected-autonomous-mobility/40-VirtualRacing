@@ -1,9 +1,8 @@
-# Data README.md
+# DATA README.md
 
 ## mysim2
 
-This data have been generated with the actual dev branch of DIYrobocars.
-
+This data have been generated with the actual dev branch of [DIYrobocars](https://github.com/autorope/donkeycar).
 
 Please see folder [configs/mysim2](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/configs/mysim2) for details.
 
