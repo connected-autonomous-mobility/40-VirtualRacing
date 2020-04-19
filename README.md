@@ -35,12 +35,12 @@ models trained by others
 
 ### 7 Quick Start
 
-## 7.1 Run your model
+#### 7.1 Run your model
 ```
 (donkey) rainer@neuron:~/mysim2$ python manage.py drive --model=models/lane_keeper.h5
 ```
 
-## 7.2 In your browser goto
+#### 7.2 In your browser goto
 ```
 http://localhost:8887/drive
 ```
