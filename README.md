@@ -11,17 +11,11 @@ Now we're calling us the ***Parking Lot Nerds*** and are heading towards our new
 
 Thanks a lot to Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Linda & Wallarug (Shenzhen) and especially Alex (Detroit) for literally driving the extra miles down to Stuttgart and making our journey to Silicon Valley / Maker Faire Bay Area 2019 a once in a life time experience.
 
-![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png)
-![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png)
-
 <p float="left">
-  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png" alt="drawing" width="200"/>
-  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png" alt="drawing" width="200"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png" alt="drawing" width="400"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png" alt="drawing" width="400"/>
 </p>
 
-
-<img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png" alt="drawing" width="200"/>
-<img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png" alt="drawing" width="200"/>
 
 ### 2 preparation
 
