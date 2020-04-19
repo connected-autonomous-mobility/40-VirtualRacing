@@ -45,3 +45,6 @@ models trained by others
 http://localhost:8887/drive
 ```
 And set mode to ```local pilot```
+
+### 8 Races
+- [Japan](https://www.youtube.com/watch?v=ilvRFw7jCwY)
