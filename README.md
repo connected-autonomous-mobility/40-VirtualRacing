@@ -15,6 +15,7 @@ Thanks a lot to Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Lind
 
 - [Tawn's gist](https://gist.github.com/tawnkramer/6d244090cb8f2af1bc9f6d1ebc0377b1)
 - [Ottawa, Paul: Virtual-Hack-And-Race-Workshop](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)
+- [Ottawa repo with an early model](https://github.com/Ottawa-Autonomous-Vehicle-Group/Simulator_racer)
 
 
 ### 3 [data](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/data)
