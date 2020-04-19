@@ -14,7 +14,7 @@ Thanks a lot to Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Lind
 ### 2 preparation
 
 - [Tawn's gist](https://gist.github.com/tawnkramer/6d244090cb8f2af1bc9f6d1ebc0377b1)
-- [Ottawa, paulh](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)
+- [Ottawa, Paul: Virtual-Hack-And-Race-Workshop](https://github.com/Ottawa-Autonomous-Vehicle-Group/Virtual-Hack-And-Race-Workshop)
 
 
 ### 3 [data](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/data)
