@@ -20,31 +20,34 @@ Thanks a lot, Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Linda 
 ### 3 [data](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/data)
 
 
-### 4 [models](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/models)
+### 4 [training](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/training)
+
+
+### 5 [models](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/models)
 
 models trained by others
 - [naisy](https://drive.google.com/file/d/1CwBHI4Ms1wphSNg2xyUn7fdYAkepYQSU/view)
 
-### 5 [Leaderboard](https://aleaderboard.com/w2/b24ffdaf-895c-422f-9aed-c51c4edc4579)
+### 6 [Leaderboard](https://aleaderboard.com/w2/b24ffdaf-895c-422f-9aed-c51c4edc4579)
 
-### 6 twitch.tv channels
+### 7 twitch.tv channels
 
 - [DAVG](https://www.twitch.tv/doavg)
 - [Oakland](https://www.twitch.tv/mossmann3333)
 - [Stuttgart](https://www.twitch.tv/DIYrobocars_stuttgart)
 
-### 7 Quick Start
+### 8 Quick Start
 
-#### 7.1 Run your model
+#### 8.1 Run your model
 ```
 (donkey) rainer@neuron:~/mysim2$ python manage.py drive --model=models/lane_keeper.h5
 ```
 
-#### 7.2 In your browser goto
+#### 8.2 In your browser goto
 ```
 http://localhost:8887/drive
 ```
 And set mode to ```local pilot```
 
-### 8 Races
+### 9 Races
 - [Japan](https://www.youtube.com/watch?v=ilvRFw7jCwY)
