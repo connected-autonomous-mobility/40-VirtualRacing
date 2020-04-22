@@ -2,12 +2,6 @@
 
 ![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1774_115.png)
 
-### 0 Credits
-https://diyrobocars.com
-https://github.com/Maximellerbach/Virtual_Racing
-https://colab.research.google.com/github/robocarstore/donkey-car-training-on-google-colab/blob/master/Donkey_Car_Training_using_Google_Colab.ipynb
-https://uwesterr.github.io/MlFastAiBlog/donkeycar/colab/2020/03/01/TrainDonkeyCar.html
-
 ### 1 background
 
 It all started at a parking lot...
@@ -66,3 +60,10 @@ And set mode to ```local pilot```
 
 ### 9 Races
 - [Japan](https://www.youtube.com/watch?v=ilvRFw7jCwY)
+
+### Credits
+- https://diyrobocars.com
+- https://github.com/Maximellerbach/Virtual_Racing
+- https://colab.research.google.com/github/robocarstore/donkey-car-training-on-google-colab/blob/master/Donkey_Car_Training_using_Google_Colab.ipynb
+- https://uwesterr.github.io/MlFastAiBlog/donkeycar/colab/2020/03/01/TrainDonkeyCar.html
+
