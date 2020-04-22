@@ -228,7 +228,7 @@ class RaceClient(SDClient):
                 print("---")
             if self.mylastspeed > self.myspeed:
                 print("+++")
-            
+            '''
             if self.myspeed < 14:
                 throttle0 = throttle
                 if abs(steering) < 0.4:
@@ -250,7 +250,7 @@ class RaceClient(SDClient):
                     if throttle < 1:
                         throttle = 1.0
                         print("*** 1.0 ***", throttle0)
-            '''
+            
             
             self.send_controls(steering, throttle)
 
