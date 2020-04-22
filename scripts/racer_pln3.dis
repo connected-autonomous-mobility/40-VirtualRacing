@@ -23,6 +23,14 @@ from docopt import docopt
 import tensorflow.python.keras as keras
 from PIL import Image
 
+# rbx
+from tkinter import *
+#window = Tk()
+#window.title("Parking Lot Nerds - Racing Cockpit")
+#window.mainloop()
+# rbx
+
+
 # Server port
 PORT = 9091
 IMG_NORM_SCALE = 1.0 / 255.0
@@ -260,7 +268,6 @@ def race(model_path, host, name):
     # Load keras model
     model = keras.models.load_model(model_path)
     model.compile(optimizer='adam', loss='mse')
-    model.summary()
 
     # Create client
     client = RaceClient(model, (host, PORT))
