@@ -23,6 +23,31 @@ from docopt import docopt
 import tensorflow.python.keras as keras
 from PIL import Image
 
+import cv2
+import matplotlib.pyplot as plt
+
+class ArrowKeyboardControls:
+    '''
+    kind of sucky control, only one press active at a time. 
+    good enough for a little testing.
+    requires that you have an CvImageView open and it has focus.
+    '''
+    def __init__(self):
+        self.left = 2424832
+        self.right = 2555904
+        self.up = 2490368
+        self.down = 2621440
+        self.codes = [self.left, self.right, self.down, self.up]
+        self.vec = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+    def run(self):
+        code = cv2.waitKeyEx(delay=100)
+        for iCode, keyCode in enumerate(self.codes):
+            if keyCode == code:
+                return self.vec[iCode]
+        return (0., 0.)
+
+
 # Server port
 PORT = 9091
 IMG_NORM_SCALE = 1.0 / 255.0
@@ -181,7 +206,9 @@ class RaceClient(SDClient):
         self.model = model
         self.myspeed = 0 # rbx
         self.mylastspeed = 0 # rbx
-
+        #plt.figure()
+        #plt.title('Parking Lot Nerds - Race Monitor')
+        
     def on_msg_recv(self, json_packet):
 
         if json_packet['msg_type'] == "car_loaded":
@@ -194,13 +221,38 @@ class RaceClient(SDClient):
             myspeed    = json_packet["speed"]
             mythrottle = json_packet["throttle"]
             mysteering = json_packet["steering_angle"]
+            myx        = json_packet["pos_x"]
+            myy        = json_packet["pos_y"]
+            myz        = json_packet["pos_z"]
+            cte        = json_packet["cte"]
             #print(myspeed) #-mythrottle*mysteering)
             self.mylastspeed = self.myspeed
             self.myspeed = myspeed
+
+           
+            '''
+            # Plot
+            #plt.scatter(pos_pos_xs, pos_pos_zs, c=colors, alpha=0.5)
+            plt.scatter(myx, myz, s=30, c=pos_speeds)
+            
+            plt.plot(myx, myz, c=colors, alpha=0.5)
+            plt.xlim(-20,100)
+            plt.ylim(-20,100)
+            
+            plt.title('Parking Lot Nerds - Recorded Tracks')
+            plt.xlabel('x')
+            plt.ylabel('z')
+            plt.legend()
+            
+            plt.show()
+            '''
             # pln
 
             image = Image.open(BytesIO(base64.b64decode(imgString)))
             self.last_image = np.asarray(image).astype(np.float32) * IMG_NORM_SCALE
+
+            #plt.imshow(image)
+            #plt.show()  # display it
 
     def send_controls(self, steering, throttle):
         p = { "msg_type" : "control",
@@ -223,6 +275,8 @@ class RaceClient(SDClient):
             steering = outputs[0][0][0]
             throttle = outputs[1][0][0]
 
+            #cv2.imshow("CarView", self.last_image)
+            #cv2.waitKey(0)
             '''
             if self.mylastspeed <= self.myspeed:
                 print("---")
@@ -255,7 +309,11 @@ class RaceClient(SDClient):
             self.send_controls(steering, throttle)
 
 
+
 def race(model_path, host, name):
+
+    # race cockpit
+    #cv2.namedWindow("CarView")
 
     # Load keras model
     model = keras.models.load_model(model_path)
@@ -302,3 +360,26 @@ def race(model_path, host, name):
 if __name__ == '__main__':
     args = docopt(__doc__)
     race(model_path = args['--model'], host = args['--host'], name = args['--name'])
+
+'''
+import cv2
+import matplotlib.pyplot as plt
+
+# Read single frame avi
+cap = cv2.VideoCapture('singleFrame.avi')
+rval, frame = cap.read()
+
+# Attempt to display using cv2 (doesn't work)
+cv2.namedWindow("Input")
+cv2.imshow("Input", frame)
+
+#Display image using matplotlib (Works)
+b,g,r = cv2.split(frame)
+frame_rgb = cv2.merge((r,g,b))
+plt.imshow(frame_rgb)
+cv2.imshow('image',img)
+cv2.waitKey(0)
+plt.title('Matplotlib') #Give this plot a title, 
+                        #so I know it's from matplotlib and not cv2
+plt.show()
+'''
