@@ -3,10 +3,6 @@
 | Server | Racing Script  | Model                         | no laps | fastest time | ping(ms) |
 |--------|----------------|-------------------------------|---------|--------------|----------|
 | Tawn   | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 220      |
-
-| Tawn   | 4              | paul-tub20-ver01.h5           |        |         | 220      |
-
-
 | Tawn   | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 220      |
 | Tawn   | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 220      |
 | Tawn   | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 220      |
@@ -30,3 +26,4 @@
 | Tawn   | 0              | parkinglotnerds11.h5          | DQ      |              | 220      |
 | Tawn   | 0              | parkinglotnerds6.h5           | DQ      |              | 220      |
 | Tawn   | 2              | paul-tub21-ver01.h5           | DQ      |              | 220      |
+| Tawn   | 4              | paul-tub20-ver01.h5           | DQ      |              | 220      |
