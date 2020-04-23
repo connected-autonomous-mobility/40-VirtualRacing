@@ -285,7 +285,7 @@ def race(model_path, host, name):
     try:
         if AI_START:
             for i in range(maxcount): 
-                client.send_controls(-0.1,1.)
+                client.send_controls(-0.05,1.)
                 time.sleep(0.2)
                 print("AI kick start", i)
             AI_START = False
