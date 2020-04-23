@@ -65,5 +65,6 @@ And set mode to ```local pilot```
 - https://diyrobocars.com
 - https://github.com/Maximellerbach/Virtual_Racing
 - https://github.com/robocarstore/donkey-car-training-on-google-colab/blob/master/Donkey_Car_Training_using_Google_Colab.ipynb
+- https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar
 
 
