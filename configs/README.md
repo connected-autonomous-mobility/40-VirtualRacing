@@ -2,8 +2,9 @@
 
 | Server | Client |Racing Script  | Model                         | no laps | fastest time | ping(ms) |
 |--------|--------|---------------|-------------------------------|---------|--------------|----------|
-| Tawn   | Colab  |0              | paul-tub20-ver01.h5           | 6       | 19.32        | 220      |
+| Tawn   | Colab  | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 220      |
+| Tawn   | Neuron | 0              | paul-tub20-ver01.h5           | 2       | 19.80        | 220      |
 | Tawn   | Colab  | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds12.h5          | 6       | 20.10        | 220      |
