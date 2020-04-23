@@ -29,3 +29,4 @@
 | Tawn   | Colab  | 0              | parkinglotnerds6.h5           | DQ      |              | 220      |
 | Tawn   | Colab  | 2              | paul-tub21-ver01.h5           | DQ      |              | 220      |
 | Tawn   | Colab  | 4              | paul-tub20-ver01.h5           | DQ      |              | 220      |
+| Tawn   | Colab  | 0              | paul-tub21-ver01.h5           | DQ      |              | 220      |
