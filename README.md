@@ -61,6 +61,8 @@ And set mode to ```local pilot```
 ### 9 Races
 - [Japan](https://www.youtube.com/watch?v=ilvRFw7jCwY)
 
+### 10 [Reinforcement Learning (very experimental!)](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/ddqn)
+
 ### Credits
 - https://diyrobocars.com
 - https://github.com/tawnkramer/gym-donkeycar
