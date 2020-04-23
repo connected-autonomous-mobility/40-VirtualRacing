@@ -1,4 +1,4 @@
-# Racing Model Performance on Client Colab
+# Racing Model Performance
 
 | Server | Client |Racing Script  | Model                         | no laps | fastest time | ping(ms) |
 |--------|--------|---------------|-------------------------------|---------|--------------|----------|
@@ -16,6 +16,7 @@
 | Tawn   | Colab  | 2              | parkinglotnerds1.h5           | 3       | 22.04        | 220      |
 | Tawn   | Colab  | 0              | paul-tub21-ver01.h5           | 1       | 22.94        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds7.h5           | 1       | 24.10        | 220      |
+| Tawn   | Neuron | 0              | parkinglotnerds8.h5           | 2       | 24.30        | 0.05     |
 | Tawn   | Colab  | 2              | paul-tub20-ver01.h5           | 1       | 24.94        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerdsAI_tub48.h5    | 1       | 24.72        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds16.h5          | 2       | 23.00        | 220      |
