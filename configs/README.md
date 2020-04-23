@@ -9,7 +9,8 @@
 | Tawn   | 0              | parkinglotnerds10.h5          | 2       | 20.74        | 220      |
 | Tawn   | 0              | parkinglotnerds11.h5          | DQ      |              | 220      |
 | Tawn   | 0              | parkinglotnerds12.h5          | 6       | 20.10        | 220      |
-| Tawn   | 0              | parkinglotnerds13.h5          |        |         | 220      |
-| Tawn   | 0              | parkinglotnerds14.h5          |        |         | 220      |
-| Tawn   | 0              | parkinglotnerds15.h5          |        |         | 220      |
-| Tawn   | 0              | parkinglotnerds16.h5          |        |         | 220      |
+| Tawn   | 0              | parkinglotnerds13.h5          | 2       | 20.36        | 220      |
+| Tawn   | 0              | parkinglotnerds14.h5          | 2      | 19.78        | 220      |
+| Tawn   | 0              | parkinglotnerds15.h5          | 2+       | 35.72        | 220      |
+| Tawn   | 0              | parkinglotnerds16.h5          | 2      | 23.00        | 220      |
+| Tawn   | 0              | parkinglotnerds8.h5           |        |         | 220      |
