@@ -6,6 +6,7 @@
 | Tawn   | Neuron | 5l             | parkinglotnerds8c_AI_tu8.h5  | 10       | 18.20        | 0.06      |
 | Tawn   | Paul   | manage.py      | ver02-slided200           | 3       | 18.26        | 80       |
 | Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.34        | 80       |
+| Tawn   | colab  | 5              | parkinglotnerds8.h5           | 10      | 18.54        | ??       |
 | Tawn   | donkey1| 4              | parkinglotnerds8.h5           | 3       | 18.60        | 80       |
 | Tawn   | donkey1| 5              | paul-tub20-ver01.h5           | 4       | 18.78        | 220      |
 | Tawn   | Colab  | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 220      |
