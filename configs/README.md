@@ -8,17 +8,17 @@
 | Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.34        | 80       |
 | Tawn   | colab  | 5              | parkinglotnerds8.h5           | 10      | 18.54        | 160       |
 | Tawn   | donkey1| 4              | parkinglotnerds8.h5           | 3       | 18.60        | 80       |
-| Tawn   | donkey1| 5              | paul-tub20-ver01.h5           | 4       | 18.78        | 220      |
-| Tawn   | Colab  | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 220      |
+| Tawn   | donkey1| 5              | paul-tub20-ver01.h5           | 4       | 18.78        | 80      |
+| Tawn   | Colab  | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 160      |
 | Tawn   | donkey1| 0              | parkinglotnerds8.h5           | 13      | 19.46        | 80       |
-| Tawn   | Colab  | 5              | parkinglotnerds8.h5           | 10      | 19.50        | ??       |
-| Tawn   | Colab  | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 220      |
+| Tawn   | Colab  | 5              | parkinglotnerds8.h5           | 10      | 19.50        | 160       |
+| Tawn   | Colab  | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 160      |
 | Tawn   | Neuron | 0              | paul-tub20-ver01.h5           | 2       | 19.80        | 220      |
-| Tawn   | Colab  | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 220      |
-| Tawn   | Colab  | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 220      |
+| Tawn   | Colab  | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 160      |
+| Tawn   | Colab  | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 160      |
 | Tawn   | Colab  | 5             | parkinglotnerds8c_AI_tu8.h5  | 3       | 19.98        | 160      |
-| Tawn   | Colab  | 0              | parkinglotnerds12.h5          | 6       | 20.10        | 220      |
-| Tawn   | Colab  | 0              | parkinglotnerds13.h5          | 2       | 20.36        | 220      |
+| Tawn   | Colab  | 0              | parkinglotnerds12.h5          | 6       | 20.10        | 160      |
+| Tawn   | Colab  | 0              | parkinglotnerds13.h5          | 2       | 20.36        | 160      |
 | Tawn   | Colab  | 0              | parkinglotnerds10.h5          | 2       | 20.74        | 220      |
 | Tawn   | Colab  | 4              | parkinglotnerds8.h5           | 3       | 20.80        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds5.h5           | 3       | 20.90        | 220      |
