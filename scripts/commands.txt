@@ -3,10 +3,11 @@ parkinglotnerds8.h5
 
 python racer_pln0.py --model=../models/parkinglotnerds8.h5 --host=127.0.0.1 --name pln8
 python racer_pln0.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln8
+python racer_pln0.py --model=../models/parkinglotnerds8.h5 --host=donkeysim.paje.ca --name pln_8
 
 python racer_pln0.py --model=../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20
 python racer_pln0.py --model=../models/paul-tub21-ver01.h5 --host=trainmydonkey.com --name pln_p21
 
-
+python racer_pln0.py --model=../models/paul-tub21-ver01.h5 --host=donkeysim.paje.ca --name pln_p21
 
 !python 40*/scripts/racer_pln4.py --host trainmydonkey.com --model 40*/models/paul-tub20-ver01.h5 --name pln_8
