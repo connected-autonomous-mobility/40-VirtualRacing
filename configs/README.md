@@ -2,7 +2,9 @@
 
 | Server | Client |Racing Script  | Model                         | no laps | fastest time | ping(ms) |
 |--------|--------|---------------|-------------------------------|---------|--------------|----------|
+| Tawn   | Paul   | ??              | ver02-slided200           | 3       | 18.26        | 80       |
 | Tawn   | donkey1| 4              | parkinglotnerds8.h5           | 3       | 18.60        | 80       |
+| Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.92        | 80       |
 | Tawn   | Colab  | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 220      |
 | Tawn   | donkey1| 0              | parkinglotnerds8.h5           | 13      | 19.46        | 80       |
 | Tawn   | Colab  | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 220      |
