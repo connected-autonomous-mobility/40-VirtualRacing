@@ -2,8 +2,9 @@
 
 | Server | Client |Racing Script  | Model                         | no laps | fastest time | ping(ms) |
 |--------|--------|---------------|-------------------------------|---------|--------------|----------|
-| Tawn   | Neuron | 5             | parkinglotnerds8c_AI_tu8.h5  | 10+       | 17.88        | 0.06      |
-| Tawn   | Neuron | 5l             | parkinglotnerds8c_AI_tu8.h5  | 10       | 18.20        | 0.06      |
+
+| Neuron   | Neuron | 5             | parkinglotnerds8c_AI_tu8.h5  | 10+       | 17.88        | 0.06      |
+| Neuron   | Neuron | 5l             | parkinglotnerds8c_AI_tu8.h5  | 10       | 18.20        | 0.06      |
 | Tawn   | Paul   | manage.py      | ver02-slided200           | 3       | 18.26        | 80       |
 | Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.34        | 80       |
 | Tawn   | colab  | 5              | parkinglotnerds8.h5           | 10      | 18.54        | ??       |
@@ -15,6 +16,7 @@
 | Tawn   | Neuron | 0              | paul-tub20-ver01.h5           | 2       | 19.80        | 220      |
 | Tawn   | Colab  | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 220      |
+| Tawn   | Colab  | 5             | parkinglotnerds8c_AI_tu8.h5  | 3       | 19.98        | ??      |
 | Tawn   | Colab  | 0              | parkinglotnerds12.h5          | 6       | 20.10        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds13.h5          | 2       | 20.36        | 220      |
 | Tawn   | Colab  | 0              | parkinglotnerds10.h5          | 2       | 20.74        | 220      |
