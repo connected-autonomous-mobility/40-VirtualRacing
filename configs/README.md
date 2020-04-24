@@ -9,6 +9,7 @@
 | Tawn   | colab  | 5              | parkinglotnerds8.h5           | 10      | 18.54        | 160       |
 | Tawn   | donkey1| 4              | parkinglotnerds8.h5           | 3       | 18.60        | 80       |
 | Tawn   | donkey1| 5              | paul-tub20-ver01.h5           | 4       | 18.78        | 80      |
+| Paul   | donkey1| 0              | parkinglotnerds8.h5           | 10+      | 19.06        | 75       |
 | Tawn   | Colab  | 0              | paul-tub20-ver01.h5           | 6       | 19.32        | 160      |
 | Tawn   | donkey1| 0              | parkinglotnerds8.h5           | 13      | 19.46        | 80       |
 | Tawn   | Colab  | 5              | parkinglotnerds8.h5           | 10      | 19.50        | 160       |
