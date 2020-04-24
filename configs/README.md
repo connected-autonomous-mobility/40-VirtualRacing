@@ -2,6 +2,8 @@
 
 | Server | Client |Racing Script  | Model                         | no laps | fastest time | ping(ms) |
 |--------|--------|---------------|-------------------------------|---------|--------------|----------|
+| Tawn   | Neuron | 5             | parkinglotnerds8c_AI_tu8.h5  | 10+       | 17.88        | 0.06      |
+| Tawn   | Neuron | 5l             | parkinglotnerds8c_AI_tu8.h5  | 10       | 18.20        | 0.06      |
 | Tawn   | Paul   | manage.py      | ver02-slided200           | 3       | 18.26        | 80       |
 | Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.34        | 80       |
 | Tawn   | donkey1| 4              | parkinglotnerds8.h5           | 3       | 18.60        | 80       |
@@ -35,3 +37,5 @@
 | Tawn   | Colab  | 2              | paul-tub21-ver01.h5           | DQ      |              | 220      |
 | Tawn   | Colab  | 4              | paul-tub20-ver01.h5           | DQ      |              | 220      |
 | Tawn   | Colab  | 0              | paul-tub21-ver01.h5           | DQ      |              | 220      |
+
+(donkey_ottawa) rainer@neuron:~/dev/40-VirtualRacing/scripts$ python racer_pln5l.py --model=../models/parkinglotnerds8c_AI_tu8.h5 --host=127.0.0.1 --name pln8
