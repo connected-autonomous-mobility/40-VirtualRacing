@@ -16,6 +16,7 @@
 | Tawn   | donkey1| 0              | parkinglotnerds8.h5           | 13      | 19.46        | 80       |
 | Tawn   | Colab  | 5              | parkinglotnerds8.h5           | 10      | 19.50        | 160       |
 | Tawn   | Colab  | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 160      |
+| Paul   | TawnTraing  | 0              | parkinglotnerds8.h5           | 10+      | 19.73        | 85      |
 | Tawn   | Neuron | 0              | paul-tub20-ver01.h5           | 2       | 19.80        | 220      |
 | Tawn   | Colab  | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 160      |
 | Tawn   | Colab  | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 160      |
