@@ -4,6 +4,7 @@
 |--------|--------|---------------|-------------------------------|---------|--------------|----------|
 | Neuron   | Neuron | 5             | parkinglotnerds8c_AI_tub48.h5  | 10+       | 17.88        | 0.06      |
 | Paul   | donkey1| 5              | parkinglotnerds8.h5           | 13+      | 17.92        | 75       |
+| Paul   | Neuron | 5             | parkinglotnerds8c_AI_tub48.h5  | 8       | 17.95        | 75      |
 | Neuron   | Neuron | 5l             | parkinglotnerds8c_AI_tub48.h5  | 10       | 18.20        | 0.06      |
 | Tawn   | Paul   | manage.py      | ver02-slided200           | 3       | 18.26        | 80       |
 | Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.34        | 80       |
