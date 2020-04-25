@@ -9,7 +9,7 @@ python racer_pln5.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.
 
 
 18.58 / Tawn + donkey1
-(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing/scripts/thrmap$ python racerThrottleMap3.py --mel=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20rT
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing/scripts/thrmap$ python racerThrottleMap3.py --model=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20rT
 
 
 ##########################################
