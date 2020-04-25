@@ -3,6 +3,20 @@ Race scripts - candidates April 25th, 2020
 ##############################################
 
 
+***with throttle tweaking***
+17.94 / Tawn + TawnsClinet
+(donkey) rainer01965@ip-10-191-209-105:~/projects/40-VirtualRacing/scripts/thrmap$ 
+python racerThrottlap3.py --model=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20rT3
+
+
+***without throttle tweaking***
+18.68 / Tawn + TawnsClinet
+```
+(donkey) rainer01965@ip-10-191-209-105:~/projects/40-VirtualRacing/scripts$ 
+python racer_pln0.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r0
+```
+
+
 18.92 / Tawn + donkey1
 python racer_pln5.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r5
 
@@ -12,8 +26,6 @@ python racer_pln5.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.
 (donkey) heavy02011@donkey1:~/projects/40-VirtualRacing/scripts/thrmap$ 
 python racerThrottleMap3.py --model=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20rT
 
-18.68 / Tawn + TawnsClinet
-^C(donkey) rainer01965@ip-10-191-209-105:~/projects/40-VirtualRacing/scripts$ python racer_pln0.py --mod=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r0
 
 
 
@@ -64,3 +76,7 @@ racerThrottleMap.py
 
 
 python racer_pln5b.py --model=../mode/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r5b
+++++++++++++++++++++
+18.58 / Tawn + donkey1
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing/scripts/thrmap$ 
+python racerThrottleMap3.py --model=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20rT
