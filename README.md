@@ -62,7 +62,7 @@ http://localhost:8887/drive
 And set mode to ```local pilot```
 
 ### 9 Races
-#### First Ever Virtual [Race](https://youtu.be/BOzX-Bm0bk0) League @DIYrobocars, April 25th, 2020
+#### [First Ever Virtual Race](https://youtu.be/BOzX-Bm0bk0) League @DIYrobocars, April 25th, 2020
 
 
 
