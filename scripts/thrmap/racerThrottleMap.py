@@ -18,10 +18,15 @@ import re
 import socket
 import select
 from threading import Thread
-
+from math import sqrt
 from docopt import docopt
 import tensorflow.python.keras as keras
 from PIL import Image
+
+
+thrMap = np.genfromtxt('ThrottleMap.csv',delimiter=',')
+global lastPos
+lastPos = 0
 
 # Server port
 PORT = 9091
@@ -173,66 +178,83 @@ class SDClient:
 
 class RaceClient(SDClient):
     
-
+    
     def __init__(self, model, address, poll_socket_sleep_time=0.01):
         super().__init__(*address, poll_socket_sleep_time=poll_socket_sleep_time)
         self.last_image = None
         self.car_loaded = False
         self.model = model
-        self.myspeed = 0 # rbx
-        self.mylastspeed = 0 # rbx
-        self.posx = 0
-        self.posy = 0
-        self.posz = 0
+        global lastPos
+        self.EOLflag = False
+        
 
     def on_msg_recv(self, json_packet):
+
+        global lastPos
 
         if json_packet['msg_type'] == "car_loaded":
             self.car_loaded = True
         
         if json_packet['msg_type'] == "telemetry":
             imgString = json_packet["image"]
-            
-            # pln
-            cte        = json_packet["cte"]
-            myspeed    = json_packet["speed"]
-            mythrottle = json_packet["throttle"]
-            mysteering = json_packet["steering_angle"]
-            myx        = json_packet["pos_x"]
-            myy        = json_packet["pos_y"]
-            myz        = json_packet["pos_z"]
-            #print(myspeed) #-mythrottle*mysteering)
-            self.mylastspeed = self.myspeed
-            self.myspeed = myspeed
-            self.posx = myx
-            self.posy = myy
-            self.posz = myz
-
-            # store pilot/angle into user/angle 
-            myoutput_path = "./data/AI_tub_00_20-04-24/record_"+str(ix)+".json"
-            record["user/angle"]      = mysteering
-            record["user/throttle"]   = mythrottle 
-            print(record)           
-            try:
-                with open(myoutput_path, 'w') as fp:
-                    json.dump(record, fp)
-                    #print('wrote record:', record)
-            except TypeError:
-                print('troubles with record:', json_data)
-            except FileNotFoundError:
-                raise
-            except:
-                print("Unexpected error:", sys.exc_info()[0])
-                raise
-
-
-            # pln
-
             image = Image.open(BytesIO(base64.b64decode(imgString)))
             self.last_image = np.asarray(image).astype(np.float32) * IMG_NORM_SCALE
 
+            self.cte = json_packet["cte"]
+            self.speed = json_packet["speed"]
+            self.strAngle = json_packet["steering_angle"]
+            self.thrPos = json_packet["throttle"]
+            self.pos_x = json_packet["pos_x"]
+            self.pos_y = json_packet["pos_y"]
+            self.pos_z = json_packet["pos_z"]
+            
+            #simplotWriter.writerow([self.pos_x, self.pos_y, self.pos_z, self.cte, self.strAngle, self.thrPos, self.speed])
 
+            self.lastX = thrMap[lastPos,1]
+            self.lastZ = thrMap[lastPos,3]
+            self.minDistance = sqrt((self.pos_x-self.lastX)**2 + (self.pos_z-self.lastZ)**2)
+            
+            i = 0
 
+            for i in range(lastPos, 255):
+                self.newX = thrMap[i,1]
+                self.newZ = thrMap[i,3]
+                self.newDistance = sqrt((self.pos_x-self.newX)**2 + (self.pos_z-self.newZ)**2)
+                if self.newDistance <= self.minDistance:
+                    self.minDistance = self.newDistance
+                    #self.lastPosition = i
+                    #print(i)
+                    if(i > 253):
+                        print('Flag!!')
+                        self.EOLflag = True
+                        lastPos = 0
+                        break
+                else:
+                    #self.lastPosition = max(i-1, 0)
+                    lastPos = max(i-1, 0)
+                    break
+                i += 1
+            '''
+            if self.EOLflag:
+                print('New Lap!!')
+                self.lastPosition = 0
+                self.EOLflag = False
+                for i in range(lastPos, 255):
+                    self.newX = thrMap[i,1]
+                    self.newZ = thrMap[i,3]
+                    self.newDistance = sqrt((self.pos_x-self.newX)**2 + (self.pos_z-self.newZ)**2)
+                    if self.newDistance <= self.minDistance:
+                        self.minDistance = self.newDistance
+                        #self.lastPosition = i
+                        #print(i)
+                        if(i == 255):
+                            self.EOLflag = True
+                    else:
+                        #self.lastPosition = max(i-1, 0)
+                        lastPos = max(i-1, 0)
+                        break
+                    i += 1
+            '''
     def send_controls(self, steering, throttle):
         p = { "msg_type" : "control",
                 "steering" : steering.__str__(),
@@ -241,69 +263,44 @@ class RaceClient(SDClient):
         msg = json.dumps(p)
         self.send(msg)
 
-    def update0(self):
+    def update(self):
+
+        global lastPos
+
+
         if self.last_image is not None:
             outputs = self.model.predict(self.last_image[None, :, :, :])
             steering = outputs[0][0][0]
             throttle = outputs[1][0][0]
-            self.send_controls(steering, throttle)
 
-    def update(self): # Kickstart version ;-) rb
-        if self.last_image is not None:
-            outputs = self.model.predict(self.last_image[None, :, :, :])
-            steering = outputs[0][0][0]
-            throttle = outputs[1][0][0]
+            self.targetSpeed = thrMap[lastPos, 8]
+            if self.speed < self.targetSpeed:
+                if self.targetSpeed == 30:
+                    throttle = 1.0
+                else:
+                    throttle = 0.50
+            elif self.speed > self.targetSpeed:
+                if self.speed > 13:
+                    throttle = -1.0
+                    steering = 0.0
+                else:    
+                    throttle = -0.1
+            else:
+                throttle = 0.25
 
-            '''
-            if self.mylastspeed <= self.myspeed:
-                print("---")
-            if self.mylastspeed > self.myspeed:
-                print("+++")
-            '''
-            #if self.myspeed < 14:
+            if lastPos < 20:
+                if self.speed < 8.0:
+                    if self.cte > -2.25:
+                        steering = -0.1
 
-
-            # exclude this areas and speeds
-            myex1 = (self.posx<60 and self.posz >20) # cone 
-            myex2 = (self.posx>55 and self.posz <55) # cone 
-
-            #mycondition = (self.myspeed>10)and(!myex1)and (!myex2)
-            mycondition = (self.myspeed < 14) and (not myex1) and (not myex2) #and (not AI_START)
-
-            if mycondition: ### AI boost ###
-                throttle0 = throttle
-                if abs(steering) < 0.4:
-                    if throttle < 0.7:
-                        throttle = 0.7
-                        print("*** 0.7 ***", throttle0)
-
-                if abs(steering) < 0.3:
-                    if throttle < 0.85:
-                        throttle = 0.85
-                        print("*** 0.8 ***", throttle0)
-
-                if abs(steering) < 0.2:
-                    if throttle < 0.95:
-                        throttle = 0.95
-                        print("*** 0.9 ***", throttle0)
-
-                if abs(steering) < 0.1:
-                    if throttle < 1:
-                        throttle = 1.0
-                        print("*** 1.0 ***", throttle0)
-            
-            
+            print(lastPos, self.speed, steering,throttle)
             self.send_controls(steering, throttle)
 
 
 def race(model_path, host, name):
 
-    print("racer_pln4.py running ...")
-
     # Load keras model
     model = keras.models.load_model(model_path)
-    #model.compile(optimizer='adam', loss='mse')
-    #model.summary()
 
     # Create client
     client = RaceClient(model, (host, PORT))
@@ -314,25 +311,11 @@ def race(model_path, host, name):
     time.sleep(1.0)
 
     # Car config
-    msg = '{ "msg_type" : "car_config", "body_style" : "dokney", "body_r" : "64", "body_g" : "64", "body_b" : "64", "car_name" : "%s", "font_size" : "100" }' % (name)
+    msg = '{ "msg_type" : "car_config", "body_style" : "car01", "body_r" : "128", "body_g" : "0", "body_b" : "128", "car_name" : "%s", "font_size" : "40" }' % (name)
     client.send(msg)
     time.sleep(0.2)
 
-    '''
-    AI_LAUNCH_DURATION = 2.7 #3.0            # the ai will output throttle for this many seconds
-    AI_LAUNCH_THROTTLE = 1.7 #1.8 
-    '''
-    maxcount = int(2.7/0.2) #2.7s 20Hz
-    print("maxcount: ", maxcount)
-    AI_START = True
     try:
-        if AI_START:
-            for i in range(maxcount): 
-                client.send_controls(-0.05,1.)
-                time.sleep(0.2)
-                print("AI kick start", i)
-            AI_START = False
-            
         while True:
             client.update()
             time.sleep(0.1)

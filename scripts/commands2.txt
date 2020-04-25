@@ -1,0 +1,59 @@
+##############################################
+Race scripts - candidates April 25th, 2020
+##############################################
+
+
+18.92 / Tawn + donkey1
+python racer_pln5.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r5
+
+
+
+
+
+##########################################
+Training script
+##########################################
+
+python racerThrottleMap.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r5
+python racerThrottleMap.py --model=../models/parkinglotnerds8.h5 --host=127.0.0.1 --name pln_8rT
+
+
+'' / LOCAL
+(donkey_ottawa) rainer@neuron:~/dev/40-VirtualRacing/scripts/thrmap$ python racerThrottleMap.py --model=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20rT
+
+
+17.60 / LOCAL
+(donkey_ottawa) rainer@neuron:~/dev/40-VirtualRacing/scripts/thrmap$ python racerThrottleMap.py --model=../../models/paul-tub20-ver01.h5 --host=127.0.0.1 --name pln_p20rT
+
+
+
+
+
+
+
+
+
+python racer_pln5b.py --model=../models/parkinglotnerds8c_AI_tub48.h5 --host=trainmydonkey.com --name pln_8cAI_r5b
+
+
+
+
+python racer_pln0.py --model=../models/parkinglotnerds8.h5 --host=127.0.0.1 --name pln8
+python racer_pln0.py --model=../models/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln8
+
+
+python racer_pln5.py --model=../models/parkinglotnerds8c_AI_tub48.h5 --host=trainmydonkey.com --name pln_8cAI_r5
+
+
+python racer_pln0.py --model=../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name pln_p20
+python racer_pln0.py --model=../models/paul-tub21-ver01.h5 --host=trainmydonkey.com --name pln_p21
+
+
+
+!python 40*/scripts/racer_pln4.py --host trainmydonkey.com --model 40*/models/paul-tub20-ver01.h5 --name pln_8
+
+
+racerThrottleMap.py
+
+
+python racer_pln5b.py --model=../mode/parkinglotnerds8.h5 --host=trainmydonkey.com --name pln_8r5b

@@ -182,7 +182,6 @@ class RaceClient(SDClient):
         self.myspeed = 0 # rbx
         self.mylastspeed = 0 # rbx
         self.posx = 0
-        self.posy = 0
         self.posz = 0
 
     def on_msg_recv(self, json_packet):
@@ -194,22 +193,28 @@ class RaceClient(SDClient):
             imgString = json_packet["image"]
             
             # pln
-            cte        = json_packet["cte"]
             myspeed    = json_packet["speed"]
             mythrottle = json_packet["throttle"]
             mysteering = json_packet["steering_angle"]
-            myx        = json_packet["pos_x"]
-            myy        = json_packet["pos_y"]
-            myz        = json_packet["pos_z"]
+            myx = json_packet["pos_x"]
+            myz = json_packet["pos_z"]
             #print(myspeed) #-mythrottle*mysteering)
             self.mylastspeed = self.myspeed
             self.myspeed = myspeed
             self.posx = myx
-            self.posy = myy
             self.posz = myz
+            # pln
 
+            image = Image.open(BytesIO(base64.b64decode(imgString)))
+            self.last_image = np.asarray(image).astype(np.float32) * IMG_NORM_SCALE
+
+            #record = json.dump({"a": "1.0"})
+            #print(record)
+            
             # store pilot/angle into user/angle 
-            myoutput_path = "./data/AI_tub_00_20-04-24/record_"+str(ix)+".json"
+            #myoutput_path = "./data/AI_tub_00_20-04-24/record_"+str(ix)+".json"
+            myoutput_path = "./data/record_"+str(ix)+".json"
+
             record["user/angle"]      = mysteering
             record["user/throttle"]   = mythrottle 
             print(record)           
@@ -224,14 +229,7 @@ class RaceClient(SDClient):
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
-
-
-            # pln
-
-            image = Image.open(BytesIO(base64.b64decode(imgString)))
-            self.last_image = np.asarray(image).astype(np.float32) * IMG_NORM_SCALE
-
-
+            
 
     def send_controls(self, steering, throttle):
         p = { "msg_type" : "control",
@@ -268,26 +266,26 @@ class RaceClient(SDClient):
             myex2 = (self.posx>55 and self.posz <55) # cone 
 
             #mycondition = (self.myspeed>10)and(!myex1)and (!myex2)
-            mycondition = (self.myspeed < 14) and (not myex1) and (not myex2) #and (not AI_START)
+            mycondition = (self.myspeed < 14)and (not myex1) and (not myex2) #and (not AI_START)
 
             if mycondition: ### AI boost ###
                 throttle0 = throttle
-                if abs(steering) < 0.4:
+                if abs(steering) < 0.37:
                     if throttle < 0.7:
                         throttle = 0.7
                         print("*** 0.7 ***", throttle0)
 
-                if abs(steering) < 0.3:
+                if abs(steering) < 0.27:
                     if throttle < 0.85:
                         throttle = 0.85
                         print("*** 0.8 ***", throttle0)
 
-                if abs(steering) < 0.2:
+                if abs(steering) < 0.17:
                     if throttle < 0.95:
                         throttle = 0.95
                         print("*** 0.9 ***", throttle0)
 
-                if abs(steering) < 0.1:
+                if abs(steering) < 0.07:
                     if throttle < 1:
                         throttle = 1.0
                         print("*** 1.0 ***", throttle0)
@@ -345,3 +343,5 @@ def race(model_path, host, name):
 if __name__ == '__main__':
     args = docopt(__doc__)
     race(model_path = args['--model'], host = args['--host'], name = args['--name'])
+
+# (donkey_ottawa) rainer@neuron:~/dev/40-VirtualRacing/scripts$ python racer_pln7.py --model=../models/parkinglotnerds8c_AI_tub48.h5 -ost=127.0.0.1 --name pln

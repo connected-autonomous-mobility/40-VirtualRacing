@@ -1,3 +1,6 @@
+'''
+(c) eric, thx
+'''
 """
 Script to drive a keras TF model with the Virtual Race Environment.
 
@@ -22,6 +25,11 @@ from threading import Thread
 from docopt import docopt
 import tensorflow.python.keras as keras
 from PIL import Image
+
+import csv
+simplotWriter = csv.writer(open('simplot.csv', 'w', newline=''), delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+simplotWriter.writerow(['X', 'Y', 'Z', 'CTE', 'Steering', 'Throttle', 'Speed'])
+
 
 # Server port
 PORT = 9091
@@ -179,11 +187,8 @@ class RaceClient(SDClient):
         self.last_image = None
         self.car_loaded = False
         self.model = model
-        self.myspeed = 0 # rbx
-        self.mylastspeed = 0 # rbx
-        self.posx = 0
-        self.posy = 0
-        self.posz = 0
+        self.speed = 0 # rbx
+        self.lastspeed = 0 # rbx
 
     def on_msg_recv(self, json_packet):
 
@@ -193,45 +198,23 @@ class RaceClient(SDClient):
         if json_packet['msg_type'] == "telemetry":
             imgString = json_packet["image"]
             
-            # pln
-            cte        = json_packet["cte"]
-            myspeed    = json_packet["speed"]
-            mythrottle = json_packet["throttle"]
-            mysteering = json_packet["steering_angle"]
-            myx        = json_packet["pos_x"]
-            myy        = json_packet["pos_y"]
-            myz        = json_packet["pos_z"]
-            #print(myspeed) #-mythrottle*mysteering)
-            self.mylastspeed = self.myspeed
-            self.myspeed = myspeed
-            self.posx = myx
-            self.posy = myy
-            self.posz = myz
+            self.cte = json_packet["cte"]
+            self.speed = json_packet["speed"]
+            self.strAngle = json_packet["steering_angle"]
+            self.thrPos = json_packet["throttle"]
+            self.pos_x = json_packet["pos_x"]
+            self.pos_y = json_packet["pos_y"]
+            self.pos_z = json_packet["pos_z"]
+            
+            simplotWriter.writerow([self.pos_x, self.pos_y, self.pos_z, self.cte, self.strAngle, self.thrPos, self.speed])
 
-            # store pilot/angle into user/angle 
-            myoutput_path = "./data/AI_tub_00_20-04-24/record_"+str(ix)+".json"
-            record["user/angle"]      = mysteering
-            record["user/throttle"]   = mythrottle 
-            print(record)           
-            try:
-                with open(myoutput_path, 'w') as fp:
-                    json.dump(record, fp)
-                    #print('wrote record:', record)
-            except TypeError:
-                print('troubles with record:', json_data)
-            except FileNotFoundError:
-                raise
-            except:
-                print("Unexpected error:", sys.exc_info()[0])
-                raise
-
-
+            
+            #print(mspeed) #-mythrottle*mysteering)
+            self.lastspeed = self.speed
             # pln
 
             image = Image.open(BytesIO(base64.b64decode(imgString)))
             self.last_image = np.asarray(image).astype(np.float32) * IMG_NORM_SCALE
-
-
 
     def send_controls(self, steering, throttle):
         p = { "msg_type" : "control",
@@ -255,22 +238,12 @@ class RaceClient(SDClient):
             throttle = outputs[1][0][0]
 
             '''
-            if self.mylastspeed <= self.myspeed:
+            if self.lastspeed <= self.speed:
                 print("---")
-            if self.mylastspeed > self.myspeed:
+            if self.lastspeed > self.speed:
                 print("+++")
-            '''
-            #if self.myspeed < 14:
-
-
-            # exclude this areas and speeds
-            myex1 = (self.posx<60 and self.posz >20) # cone 
-            myex2 = (self.posx>55 and self.posz <55) # cone 
-
-            #mycondition = (self.myspeed>10)and(!myex1)and (!myex2)
-            mycondition = (self.myspeed < 14) and (not myex1) and (not myex2) #and (not AI_START)
-
-            if mycondition: ### AI boost ###
+            
+            if self.speed < 14:
                 throttle0 = throttle
                 if abs(steering) < 0.4:
                     if throttle < 0.7:
@@ -291,14 +264,12 @@ class RaceClient(SDClient):
                     if throttle < 1:
                         throttle = 1.0
                         print("*** 1.0 ***", throttle0)
-            
+            '''
             
             self.send_controls(steering, throttle)
 
 
 def race(model_path, host, name):
-
-    print("racer_pln4.py running ...")
 
     # Load keras model
     model = keras.models.load_model(model_path)
@@ -314,7 +285,7 @@ def race(model_path, host, name):
     time.sleep(1.0)
 
     # Car config
-    msg = '{ "msg_type" : "car_config", "body_style" : "dokney", "body_r" : "64", "body_g" : "64", "body_b" : "64", "car_name" : "%s", "font_size" : "100" }' % (name)
+    msg = '{ "msg_type" : "car_config", "body_style" : "car01", "body_r" : "128", "body_g" : "0", "body_b" : "128", "car_name" : "%s", "font_size" : "40" }' % (name)
     client.send(msg)
     time.sleep(0.2)
 
