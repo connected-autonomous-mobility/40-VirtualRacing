@@ -23,14 +23,6 @@ from docopt import docopt
 import tensorflow.python.keras as keras
 from PIL import Image
 
-# rbx
-from tkinter import *
-#window = Tk()
-#window.title("Parking Lot Nerds - Racing Cockpit")
-#window.mainloop()
-# rbx
-
-
 # Server port
 PORT = 9091
 IMG_NORM_SCALE = 1.0 / 255.0
@@ -189,6 +181,8 @@ class RaceClient(SDClient):
         self.model = model
         self.myspeed = 0 # rbx
         self.mylastspeed = 0 # rbx
+        self.posx = 0
+        self.posz = 0
 
     def on_msg_recv(self, json_packet):
 
@@ -202,9 +196,13 @@ class RaceClient(SDClient):
             myspeed    = json_packet["speed"]
             mythrottle = json_packet["throttle"]
             mysteering = json_packet["steering_angle"]
+            myx = json_packet["pos_x"]
+            myz = json_packet["pos_z"]
             #print(myspeed) #-mythrottle*mysteering)
             self.mylastspeed = self.myspeed
             self.myspeed = myspeed
+            self.posx = myx
+            self.posz = myz
             # pln
 
             image = Image.open(BytesIO(base64.b64decode(imgString)))
@@ -237,24 +235,34 @@ class RaceClient(SDClient):
             if self.mylastspeed > self.myspeed:
                 print("+++")
             '''
-            if self.myspeed < 14:
+            #if self.myspeed < 14:
+
+
+            # exclude this areas and speeds
+            myex1 = (self.posx<60 and self.posz >20) # cone 
+            myex2 = (self.posx>55 and self.posz <55) # cone 
+
+            #mycondition = (self.myspeed>10)and(!myex1)and (!myex2)
+            mycondition = (self.myspeed < 14)and (not myex1) and (not myex2) #and (not AI_START)
+
+            if mycondition: ### AI boost ###
                 throttle0 = throttle
-                if abs(steering) < 0.4:
+                if abs(steering) < 0.37:
                     if throttle < 0.7:
                         throttle = 0.7
                         print("*** 0.7 ***", throttle0)
 
-                if abs(steering) < 0.3:
+                if abs(steering) < 0.27:
                     if throttle < 0.85:
                         throttle = 0.85
                         print("*** 0.8 ***", throttle0)
 
-                if abs(steering) < 0.2:
+                if abs(steering) < 0.17:
                     if throttle < 0.95:
                         throttle = 0.95
                         print("*** 0.9 ***", throttle0)
 
-                if abs(steering) < 0.1:
+                if abs(steering) < 0.07:
                     if throttle < 1:
                         throttle = 1.0
                         print("*** 1.0 ***", throttle0)
@@ -265,9 +273,12 @@ class RaceClient(SDClient):
 
 def race(model_path, host, name):
 
+    print("racer_pln4.py running ...")
+
     # Load keras model
     model = keras.models.load_model(model_path)
-    model.compile(optimizer='adam', loss='mse')
+    #model.compile(optimizer='adam', loss='mse')
+    #model.summary()
 
     # Create client
     client = RaceClient(model, (host, PORT))
@@ -292,7 +303,7 @@ def race(model_path, host, name):
     try:
         if AI_START:
             for i in range(maxcount): 
-                client.send_controls(-0.05,1.)
+                client.send_controls(-0.07,1.)
                 time.sleep(0.2)
                 print("AI kick start", i)
             AI_START = False
