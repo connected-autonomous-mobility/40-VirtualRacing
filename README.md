@@ -69,7 +69,7 @@ And set mode to ```local pilot```
 
 <p float="left">
   
-  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/6E5AFF4A-5451-48A4-9A94-76E3E866379C.png
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/6E5AFF4A-5451-48A4-9A94-76E3E866379C.png" alt="drawing" width="300"/>
   <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/362A3608-0214-4FBE-B048-71AEA1683AE5.png" alt="drawing" width="300"/>
   <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1F064E3D-F780-4989-A6AA-57F255DC00F5.png" alt="drawing" width="300"/>
 </p>
