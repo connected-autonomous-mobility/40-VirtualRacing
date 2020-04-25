@@ -71,5 +71,6 @@ And set mode to ```local pilot```
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/Simulator_racer
 - https://github.com/Sashulik/DIYRobocars-Virtual-Racing-League (main repo)
+- https://github.com/hogenimushi/donkey_data
 
 
