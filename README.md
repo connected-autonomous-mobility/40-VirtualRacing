@@ -1,4 +1,4 @@
-# 40-VirtualRacing: The Parking Lot Nerds
+# 40-VirtualRacing: The Parking Lot Nerds Development Repository
 
 ![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1774_115.png)
 
@@ -70,5 +70,6 @@ And set mode to ```local pilot```
 - https://github.com/robocarstore/donkey-car-training-on-google-colab/blob/master/Donkey_Car_Training_using_Google_Colab.ipynb
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/Simulator_racer
+- https://github.com/Sashulik/DIYRobocars-Virtual-Racing-League (main repo)
 
 
