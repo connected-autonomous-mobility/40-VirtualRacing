@@ -1,4 +1,13 @@
 ##############################################
+Race script - Participant April 25th, 2020
+##############################################
+
+Tawns Race Client (54.67.128.132)
+(donkey) rainer01965@ip-10-191-209-105:~/projects/40-VirtualRacing/scripts/thrmap$ 
+pythonacerThrottleMap3.py --model=../../models/paul-tub20-ver01.h5 --host=trainmydonkey.com --name ParkingLotNerdsConnection 
+
+
+##############################################
 Race scripts - candidates April 25th, 2020
 ##############################################
 
