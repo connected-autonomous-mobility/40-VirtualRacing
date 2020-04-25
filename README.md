@@ -68,7 +68,7 @@ And set mode to ```local pilot```
   
   <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/A6C51FE6-457B-4244-82C0-470353C6990E.png" alt="drawing" width="300"/>
   <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/182B7FFF-362B-4906-8CF0-88613AE0C27D.png" alt="drawing" width="300"/>
-  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png" alt="drawing" width="300"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1F064E3D-F780-4989-A6AA-57F255DC00F5.png" alt="drawing" width="300"/>
 </p>
 
 - [Japan](https://www.youtube.com/watch?v=ilvRFw7jCwY)
