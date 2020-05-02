@@ -90,7 +90,9 @@ def race_monitor(json_packet):
     json_packet["wheelEncoderLF"] = float(json_packet["wheelEncoderLF"])
     json_packet["wheelEncoderRF"] = float(json_packet["wheelEncoderRF"])
     json_packet["wheelEncoderRR"] = float(json_packet["wheelEncoderRR"])
-    json_packet["time"] = float(json_packet["time"])
+    #json_packet['time'] = json_packet.pop('time_simulator')
+    ##json_packet["time_simulator"] = float(json_packet["time_simulator"])
+    json_packet["time_simulator"] = float(json_packet["time_simulator"])
     json_packet["cte"] = float(json_packet["cte"])
     json_packet["istep"] = int(istep)
 
@@ -100,11 +102,11 @@ def race_monitor(json_packet):
                         'car':'PLN_8',
                         'race':'training'
                     },
-                    'time':'2009-11-15T23:24:00Z',
+                    'time':'2009-11-15T23:24:00Z', # influxdb adds a time stamp itself
                     'fields':'json_packet_placeholder'
                 }
     timestamp = datetime.datetime.now().strftime('%s')
-    json_body["time"]   = int(timestamp) #datetime.datetime.now()
+    json_body["time"]   = time.time_ns() #int(timestamp) #datetime.datetime.now()
     json_body["fields"] = json_packet
     json_body = [json_body]
     print(json_body)
@@ -307,8 +309,8 @@ def race(model_path, host, name):
     client = RaceClient(model, (host, PORT))
 
     # load scene
-    #msg = '{ "msg_type" : "load_scene", "scene_name" : "generated_track" }'
-    msg = '{ "msg_type" : "load_scene", "scene_name" : "chicane_track" }'
+    msg = '{ "msg_type" : "load_scene", "scene_name" : "generated_track" }'
+    #msg = '{ "msg_type" : "load_scene", "scene_name" : "chicane_track" }'
     client.send(msg)
     time.sleep(1.0)
 
@@ -317,20 +319,41 @@ def race(model_path, host, name):
     client.send(msg)
     time.sleep(0.2)
 
+    '''
     try:
         while True:
             client.update()
             time.sleep(0.1)
             istep += 1
             
-            '''
+            
             pygame.event.pump()
             # Exit the mainloop at any time the "ESC" key is pressed
             if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 break
             pygame.display.flip()
             pygame.time.delay(FR)
-            '''
+            
+    except KeyboardInterrupt:
+        pass
+    '''
+
+    maxcount = int(2.7/0.2) #2.7s 20Hz
+    print("maxcount: ", maxcount)
+    AI_START = True
+    try:
+        if AI_START:
+            for i in range(maxcount): 
+                client.send_controls(-0.05,1.)
+                time.sleep(0.2)
+                print("AI kick start", i)
+            AI_START = False
+            
+        while True:
+            client.update()
+            time.sleep(0.1)
+            istep += 1
+
     except KeyboardInterrupt:
         pass
 
@@ -346,6 +369,7 @@ if __name__ == '__main__':
     # setup influxdb
     databasename = "plnracing1" #"example" #"opnsense"
     dbclient = InfluxDBClient("127.00.0.1", 8086, "opnsense", "wurz", databasename)
+    dbclient.drop_database(databasename)
     dbclient.create_database(databasename)
 
     ##pygame.init()
