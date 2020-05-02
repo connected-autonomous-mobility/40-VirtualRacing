@@ -76,8 +76,24 @@ def race_monitor(json_packet):
     # influxdb complains about zero integers when fiewld is already a float
     json_packet["steering_angle"] = float(json_packet["steering_angle"])
     json_packet["throttle"] = float(json_packet["throttle"])
+    json_packet["speed"] = float(json_packet["speed"])
+    json_packet["pos_x"] = float(json_packet["pos_x"])
+    json_packet["pos_y"] = float(json_packet["pos_y"])
+    json_packet["pos_z"] = float(json_packet["pos_z"])
+    json_packet["acc_x"] = float(json_packet["acc_x"])
+    json_packet["acc_y"] = float(json_packet["acc_y"])
+    json_packet["acc_z"] = float(json_packet["acc_z"])
+    json_packet["ang_acc_x"] = float(json_packet["ang_acc_x"])
+    json_packet["ang_acc_y"] = float(json_packet["ang_acc_y"])
+    json_packet["ang_acc_z"] = float(json_packet["ang_acc_z"])
+    json_packet["wheelEncoderLR"] = float(json_packet["wheelEncoderLR"])
+    json_packet["wheelEncoderLF"] = float(json_packet["wheelEncoderLF"])
+    json_packet["wheelEncoderRF"] = float(json_packet["wheelEncoderRF"])
+    json_packet["wheelEncoderRR"] = float(json_packet["wheelEncoderRR"])
+    json_packet["time"] = float(json_packet["time"])
     json_packet["cte"] = float(json_packet["cte"])
-    
+    json_packet["istep"] = int(istep)
+
     json_body = {
                     'measurement': 'DonkeySimulator', 
                     'tags': {
@@ -88,45 +104,13 @@ def race_monitor(json_packet):
                     'fields':'json_packet_placeholder'
                 }
     timestamp = datetime.datetime.now().strftime('%s')
-    json_body["fields"] = json_packet
     json_body["time"]   = int(timestamp) #datetime.datetime.now()
+    json_body["fields"] = json_packet
     json_body = [json_body]
     print(json_body)
     
     # write race json to influxdb
     dbclient.write_points(json_body)
-
-    #json_timepacket['date'] = datetime.datetime.now()
-    #timebody = json.dumps(json_timepacket, default = myconverter)
-    #json_body["time"] = datetime.datetime.now()
-
-    #json_packet = {'msg_type': 'telemetry', 'steering_angle': 0.0, 'throttle': 0.0, 'speed': 0.1951615, 'image': '23', 'hit': 'none', 'pos_x': 49.69011, 'pos_y': 0.4859949, 'pos_z': 47.83847, 'acc_x': 0.05879937, 'acc_y': 5.071426, 'acc_z': 0.3241582, 'ang_acc_x': 0.7405857, 'ang_acc_y': 0.0002640642, 'ang_acc_z': -0.2761656, 'wheelEncoderLR': 0.0002280494, 'wheelEncoderLF': 0.0002267427, 'wheelEncoderRF': 0.0002280494, 'wheelEncoderRR': 0.0002267257, 'time': 5110.475, 'cte': 0.0001068115} 
-    #json_timepacket={}
-    #json_timepacket['date'] = datetime.datetime.now()
-    #json_timebody = json.dumps(json_timepacket, default = myconverter)
-    #timestring = "2009-11-15T"+str(istep % 24)+":00:00Z"
-    
-    ##timestring = "'2009-11-15T23:00:00Z'"
-    
-    #json_string = "{'measurement': 'DonkeySimulator', 'tags': {'car': 'PLN_8','race': 'training'},'time': "+timestring+",'fields':"+ str(json_packet) + "}"
-    #json_string = {'measurement': 'DonkeySimulator', 'tags': {'car': 'PLN_8','race': 'training'},'time': "+timestring+",'fields':"+ str(json_packet) + "}
-    
-    # input: python STRING
-    ##json_string = "{'measurement':'DonkeySimulator','tags':{'car':'PLN_8','race':'training'},'time':"+timestring+",'fields':"+ str(json_packet) + "}"
-    
-    # unknown function
-    # YOUR INPUT
-
-    # result: a python LIST
-    #json_body = [{'measurement': 'DonkeySimulator', 'tags': {'car': 'PLN_8','race': 'training'},'time': '2009-11-18T18:00:00Z','fields':{'msg_type': 'telemetry', 'steering_angle': 0.0, 'throttle': 0.0, 'speed': 0.1951615, 'image': '23', 'hit': 'none', 'pos_x': 49.69011, 'pos_y': 0.4859949, 'pos_z': 47.83847, 'acc_x': 0.05879937, 'acc_y': 5.071426, 'acc_z': 0.3241582, 'ang_acc_x': 0.7405857, 'ang_acc_y': 0.0002640642, 'ang_acc_z': -0.2761656, 'wheelEncoderLR': 0.500, 'wheelEncoderLF': 0.03002267427, 'wheelEncoderRF': 0.10002280494, 'wheelEncoderRR': 0.7002267257, 'time': 5110.475, 'cte': 0.0001068115}}]
-    
-    #https://www.influxdata.com/blog/writing-data-to-influxdb-with-python/
-    #dbclient.write_points(json_body, database=databasename, time_precision='ms', batch_size=1, protocol='line')
-
-    
-    #json_body = [{'measurement': 'DonkeySimulator', 'tags': {'car': 'PLN_8','race': 'training'},'time': '2009-11-15T23:00:00Z','fields':{'msg_type': 'telemetry', 'steering_angle': 0.0, 'throttle': 0.0, 'speed': 0.1951615, 'image': '23', 'hit': 'none', 'pos_x': 49.69011, 'pos_y': 0.4859949, 'pos_z': 47.83847, 'acc_x': 0.05879937, 'acc_y': 5.071426, 'acc_z': 0.3241582, 'ang_acc_x': 0.7405857, 'ang_acc_y': 0.0002640642, 'ang_acc_z': -0.2761656, 'wheelEncoderLR': 0.0002280494, 'wheelEncoderLF': 0.0002267427, 'wheelEncoderRF': 0.0002280494, 'wheelEncoderRR': 0.0002267257, 'time': 5110.475, 'cte': 0.0001068115}}]
-    #dbclient.write_points(json_body)
-
 
 
 def replace_float_notation(string):
@@ -360,7 +344,7 @@ if __name__ == '__main__':
     istep = 0
 
     # setup influxdb
-    databasename = "example" #"opnsense"
+    databasename = "plnracing1" #"example" #"opnsense"
     dbclient = InfluxDBClient("127.00.0.1", 8086, "opnsense", "wurz", databasename)
     dbclient.create_database(databasename)
 
