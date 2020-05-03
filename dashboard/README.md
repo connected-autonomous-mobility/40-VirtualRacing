@@ -9,7 +9,7 @@ This code is in a very early stage and not really tested yet. Handle with care!
 our modified code versions
 - [Ottawa-Autonomous-Vehicle-Group/donkeycar](https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar)
 - [sdsandbox-pln](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln)
-- TcpCarHandlers.cs: change "time" to "time_simulator" for telemetry message
+- ```TcpCarHandlers.cs: change "time" to "time_simulator" for telemetry message```
 
 ## 1 Installation
 
