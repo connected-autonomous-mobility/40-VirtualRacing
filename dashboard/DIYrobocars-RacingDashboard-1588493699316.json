@@ -20,13 +20,29 @@
   "links": [],
   "panels": [
     {
+      "content": "<h1> DIYrobocars Virtual Racing League</h1>\n<h4> Parking Lot Nerds: Ann Arbor, Detroit, Ottawa, Stuttgart </h4>\n<small><small><small><small><small><small>   Rainer Bareiß, May 3rd, 2020 powered by InfluxDB, Grafana </small></small></small></small></small></small>",
+      "datasource": null,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 28,
+      "mode": "html",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "text"
+    },
+    {
       "cacheTimeout": null,
       "datasource": "InfluxDB-DIYrobocars-Racing",
       "gridPos": {
         "h": 5,
-        "w": 6,
+        "w": 5,
         "x": 0,
-        "y": 0
+        "y": 3
       },
       "id": 2,
       "links": [],
@@ -107,9 +123,9 @@
       "datasource": "InfluxDB-DIYrobocars-Racing",
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 0
+        "w": 5,
+        "x": 5,
+        "y": 3
       },
       "id": 19,
       "links": [],
@@ -142,11 +158,11 @@
                 },
                 {
                   "color": "yellow",
-                  "value": 0
+                  "value": 0.3
                 },
                 {
                   "color": "green",
-                  "value": 0.5
+                  "value": 0.7
                 }
               ]
             },
@@ -190,75 +206,82 @@
       "type": "gauge"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
+      "cacheTimeout": null,
       "datasource": "InfluxDB-DIYrobocars-Racing",
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 0
+        "w": 5,
+        "x": 10,
+        "y": 3
       },
-      "hiddenSeries": false,
-      "id": 8,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
+      "id": 20,
+      "links": [],
       "options": {
-        "dataLinks": []
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "$$hashKey": "object:1850",
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 18,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 5
+                },
+                {
+                  "color": "green",
+                  "value": 10
+                },
+                {
+                  "color": "orange",
+                  "value": 14
+                }
+              ]
+            },
+            "title": "",
+            "unit": "velocityms"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "groupBy": [],
           "measurement": "DonkeySimulator",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "select * from demo",
+          "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "acc_x"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "acc_y"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "acc_z"
+                  "speed"
                 ],
                 "type": "field"
               }
@@ -267,89 +290,78 @@
           "tags": []
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
-      "title": "acceleration",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:840",
-          "decimals": null,
-          "format": "accMS2",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:841",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "title": "speed",
+      "type": "gauge"
     },
     {
-      "aliasColors": {},
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorPostfix": false,
+      "colorPrefix": false,
+      "colorValue": true,
+      "colors": [
+        "#F2495C",
+        "#FADE2A",
+        "#73BF69"
+      ],
       "datasource": "InfluxDB-DIYrobocars-Racing",
-      "fill": 1,
-      "fillGradient": 0,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 0,
-        "y": 5
+        "w": 9,
+        "x": 15,
+        "y": 3
       },
-      "hiddenSeries": false,
-      "id": 24,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+      "id": 4,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:526",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:527",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "pluginVersion": "6.7.3",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "$$hashKey": "object:1796",
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
         "show": false,
-        "total": false,
-        "values": false
+        "ymax": null,
+        "ymin": null
       },
-      "lines": false,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "tableColumn": "",
       "targets": [
         {
           "groupBy": [],
@@ -362,7 +374,7 @@
             [
               {
                 "params": [
-                  "throttle"
+                  "istep"
                 ],
                 "type": "field"
               }
@@ -371,51 +383,21 @@
           "tags": []
         }
       ],
-      "thresholds": [],
+      "thresholds": "1000,2500,5000",
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
-      "title": "throttle histogramm",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": 30,
-        "max": 1,
-        "min": -1,
-        "mode": "histogram",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
+      "title": "records",
+      "type": "singlestat",
+      "valueFontSize": "200%",
+      "valueMaps": [
         {
-          "$$hashKey": "object:1937",
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1938",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "$$hashKey": "object:529",
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
         }
       ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "valueName": "max"
     },
     {
       "aliasColors": {},
@@ -427,9 +409,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 5
+        "w": 5,
+        "x": 0,
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 6,
@@ -524,6 +506,194 @@
       }
     },
     {
+      "datasource": null,
+      "gridPos": {
+        "h": 15,
+        "w": 10,
+        "x": 5,
+        "y": 8
+      },
+      "id": 26,
+      "pconfig": {
+        "fixScale": "",
+        "layout": {
+          "dragmode": "lasso",
+          "font": {
+            "family": "\"Open Sans\", Helvetica, Arial, sans-serif"
+          },
+          "hovermode": "closest",
+          "legend": {
+            "orientation": "v"
+          },
+          "showlegend": false,
+          "xaxis": {
+            "range": [
+              40,
+              90
+            ],
+            "rangemode": "between",
+            "showgrid": true,
+            "title": "pos_x",
+            "type": "linear",
+            "zeroline": false
+          },
+          "yaxis": {
+            "range": [
+              -10,
+              90
+            ],
+            "rangemode": "between",
+            "showgrid": true,
+            "title": "pos_z",
+            "type": "linear",
+            "zeroline": false
+          },
+          "zaxis": {
+            "rangemode": "normal",
+            "showgrid": true,
+            "type": "linear",
+            "zeroline": false
+          }
+        },
+        "loadFromCDN": false,
+        "settings": {
+          "displayModeBar": false,
+          "type": "scatter"
+        },
+        "showAnnotations": true,
+        "traces": [
+          {
+            "mapping": {
+              "color": "DonkeySimulator.speed",
+              "size": null,
+              "text": "DonkeySimulator.speed",
+              "x": "DonkeySimulator.pos_x",
+              "y": "DonkeySimulator.pos_z",
+              "z": null
+            },
+            "name": "CarSpeed",
+            "settings": {
+              "color_option": "ramp",
+              "line": {
+                "color": "#005f81",
+                "dash": "solid",
+                "shape": "linear",
+                "width": 6
+              },
+              "marker": {
+                "color": "#33B5E5",
+                "colorscale": "YlOrRd",
+                "line": {
+                  "color": "#DDD",
+                  "width": 0
+                },
+                "showscale": true,
+                "size": 20,
+                "sizemin": 3,
+                "sizemode": "diameter",
+                "sizeref": 0.2,
+                "symbol": "circle"
+              }
+            },
+            "show": {
+              "line": true,
+              "lines": false,
+              "markers": true
+            }
+          },
+          {
+            "mapping": {
+              "color": "DonkeySimulator.throttle",
+              "size": null,
+              "text": "DonkeySimulator.speed",
+              "x": "DonkeySimulator.pos_x",
+              "y": "DonkeySimulator.pos_z",
+              "z": null
+            },
+            "name": "CarPosition",
+            "settings": {
+              "color_option": "ramp",
+              "line": {
+                "color": "#005f81",
+                "dash": "solid",
+                "shape": "linear",
+                "width": 6
+              },
+              "marker": {
+                "color": "#33B5E5",
+                "colorscale": "Rainbow",
+                "line": {
+                  "color": "#DDD",
+                  "width": 0
+                },
+                "showscale": false,
+                "size": 3,
+                "sizemin": 3,
+                "sizemode": "diameter",
+                "sizeref": 0.2,
+                "symbol": "circle"
+              }
+            },
+            "show": {
+              "line": true,
+              "lines": false,
+              "markers": true
+            }
+          }
+        ]
+      },
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "DonkeySimulator",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "pos_x"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "pos_z"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "speed"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "throttle"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "track",
+      "type": "natel-plotly-panel",
+      "version": 1
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -533,9 +703,237 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 5
+        "w": 9,
+        "x": 15,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "DonkeySimulator",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "acc_x"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "acc_y"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "acc_z"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "acceleration",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:840",
+          "decimals": null,
+          "format": "accMS2",
+          "label": null,
+          "logBase": 1,
+          "max": "10",
+          "min": "-10",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:841",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "InfluxDB-DIYrobocars-Racing",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 0,
+        "y": 13
+      },
+      "hiddenSeries": false,
+      "id": 24,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "DonkeySimulator",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "throttle"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "throttle histogramm",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": 30,
+        "max": 1,
+        "min": -1,
+        "mode": "histogram",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1937",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1938",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "InfluxDB-DIYrobocars-Racing",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 15,
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 23,
@@ -645,200 +1043,6 @@
       }
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorPostfix": false,
-      "colorPrefix": false,
-      "colorValue": true,
-      "colors": [
-        "#F2495C",
-        "#FADE2A",
-        "#73BF69"
-      ],
-      "datasource": "InfluxDB-DIYrobocars-Racing",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 0,
-        "y": 10
-      },
-      "id": 4,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "$$hashKey": "object:526",
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "$$hashKey": "object:527",
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "pluginVersion": "6.7.3",
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "$$hashKey": "object:1796",
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false,
-        "ymax": null,
-        "ymin": null
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "DonkeySimulator",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "istep"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": "1000,2500,5000",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "records",
-      "type": "singlestat",
-      "valueFontSize": "200%",
-      "valueMaps": [
-        {
-          "$$hashKey": "object:529",
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "max"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB-DIYrobocars-Racing",
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 6,
-        "y": 10
-      },
-      "id": 20,
-      "links": [],
-      "options": {
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "$$hashKey": "object:1850",
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              }
-            ],
-            "max": 18,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 5
-                },
-                {
-                  "color": "green",
-                  "value": 10
-                },
-                {
-                  "color": "orange",
-                  "value": 14
-                }
-              ]
-            },
-            "title": "",
-            "unit": "velocityms"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "orientation": "horizontal",
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "6.7.3",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "DonkeySimulator",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "select * from demo",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "speed"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "speed",
-      "type": "gauge"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -847,143 +1051,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 10
-      },
-      "hiddenSeries": false,
-      "id": 16,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "hideEmpty": false,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 3,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "DonkeySimulator",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT \"wheelEncoderLF\", \"wheelEncoderLR\", \"wheelEncoderRF\", \"wheelEncoderRR\" FROM \"DonkeySimulator\" WHERE $timeFilter",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "wheelEncoderLF"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "wheelEncoderLR"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "wheelEncoderRF"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "wheelEncoderRR"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "wheel encoders",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:5803",
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": "1.1",
-          "min": "-1.1",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:5804",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": "1",
-          "min": "-1",
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "InfluxDB-DIYrobocars-Racing",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 12,
+        "h": 5,
+        "w": 5,
         "x": 0,
-        "y": 16
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 14,
@@ -1102,212 +1173,21 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 16
+        "h": 5,
+        "w": 9,
+        "x": 15,
+        "y": 18
       },
       "hiddenSeries": false,
-      "id": 18,
-      "interval": "",
+      "id": 16,
       "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "DonkeySimulator",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT \"steering_angle\" FROM \"DonkeySimulator\" WHERE $timeFilter",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "pos_x"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "pos_y"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "pos_z"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "position",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:77",
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:78",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "datasource": "InfluxDB-DIYrobocars-Racing",
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 22
-      },
-      "id": 10,
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [],
-          "values": false
-        },
-        "orientation": "horizontal",
-        "showUnfilled": true
-      },
-      "pluginVersion": "6.7.3",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "DonkeySimulator",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "pos_x"
-                ],
-                "type": "field"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "pos_z"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "race track",
-      "type": "bargauge"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "InfluxDB-DIYrobocars-Racing",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 22
-      },
-      "hiddenSeries": false,
-      "id": 22,
-      "legend": {
+        "alignAsTable": false,
         "avg": false,
         "current": false,
+        "hideEmpty": false,
         "max": false,
         "min": false,
+        "rightSide": false,
         "show": true,
         "total": false,
         "values": false
@@ -1319,8 +1199,8 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 2,
-      "points": false,
+      "pointradius": 1,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -1328,24 +1208,43 @@
       "steppedLine": false,
       "targets": [
         {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            }
-          ],
+          "groupBy": [],
           "measurement": "DonkeySimulator",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT \"wheelEncoderLF\", \"wheelEncoderLR\", \"wheelEncoderRF\", \"wheelEncoderRR\" FROM \"DonkeySimulator\" WHERE $timeFilter",
+          "rawQuery": false,
           "refId": "A",
-          "resultFormat": "time_series",
+          "resultFormat": "table",
           "select": [
             [
               {
                 "params": [
-                  "speed"
+                  "wheelEncoderLF"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "wheelEncoderLR"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "wheelEncoderRF"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "wheelEncoderRR"
                 ],
                 "type": "field"
               }
@@ -1358,9 +1257,9 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "wheel encoders",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1374,22 +1273,23 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:2625",
+          "$$hashKey": "object:5803",
+          "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "1.1",
+          "min": "-1.1",
           "show": true
         },
         {
-          "$$hashKey": "object:2626",
+          "$$hashKey": "object:5804",
           "format": "short",
           "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "max": "1",
+          "min": "-1",
+          "show": false
         }
       ],
       "yaxis": {
@@ -1406,7 +1306,7 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-1m",
     "to": "now"
   },
   "timepicker": {
@@ -1424,10 +1324,10 @@
     ]
   },
   "timezone": "",
-  "title": "Dashboard-demo",
+  "title": "DIYrobocars-RacingDashboard",
   "uid": "Xux6Bd6Zz",
   "variables": {
     "list": []
   },
-  "version": 96
+  "version": 118
 }
