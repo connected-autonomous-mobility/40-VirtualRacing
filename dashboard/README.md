@@ -51,6 +51,7 @@ time.tims_ns()
 ```
 dbclient = InfluxDBClient("127.00.0.1", 8086, "<user>", "<password>", databasename)
 ```
+- Open Grafana in ```http://localhodt:3000```
 - Import the dashboard ```DIYrobocars-RacingDashboard-1588493699316.json```.
 - Have fun!
 
