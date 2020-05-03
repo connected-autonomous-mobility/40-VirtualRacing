@@ -10,7 +10,8 @@ our modified code versions
 - [Ottawa-Autonomous-Vehicle-Group/donkeycar](https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar)
 - [sdsandbox-pln](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln)
 - [TcpCarHandlers.cs](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln/blob/sim-racer/sdsim/Assets/Scripts/tcp/TcpCarHandler.cs): 
-```change from "time" 
+```
+   change from "time" 
    void SendTelemetry()
    {
       …
@@ -18,7 +19,7 @@ our modified code versions
       …
    }
    
-   to "time_simulator" for telemetry message
+   to "time_simulator" in
    void SendTelemetry()
    {
       …
