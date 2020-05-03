@@ -11,7 +11,7 @@ our modified code versions
 - [sdsandbox-pln](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln)
 - [TcpCarHandlers.cs](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln/blob/sim-racer/sdsim/Assets/Scripts/tcp/TcpCarHandler.cs): 
 
-   change from "time" 
+change from "time" 
 ```
    void SendTelemetry()
    {
