@@ -9,7 +9,23 @@ This code is in a very early stage and not really tested yet. Handle with care!
 our modified code versions
 - [Ottawa-Autonomous-Vehicle-Group/donkeycar](https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar)
 - [sdsandbox-pln](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln)
-- [TcpCarHandlers.cs](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln/blob/sim-racer/sdsim/Assets/Scripts/tcp/TcpCarHandler.cs): ```change "time" to "time_simulator" for telemetry message```
+- [TcpCarHandlers.cs](https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln/blob/sim-racer/sdsim/Assets/Scripts/tcp/TcpCarHandler.cs): 
+```change from "time" 
+   void SendTelemetry()
+   {
+      …
+      json.AddField("time", Time.timeSinceLevelLoad);
+      …
+   }
+   
+   to "time_simulator" for telemetry message
+   void SendTelemetry()
+   {
+      …
+      json.AddField("time_simulator", Time.timeSinceLevelLoad);
+      …
+   }
+```
 
 ## 1 Installation
 
