@@ -1,6 +1,8 @@
 # git stuff
 
-## pull changes from a fork (upstream=https://github.com/mechovation/40-VirtualRacing) to (local) master
+## pull changes from a fork 
+
+(upstream=https://github.com/mechovation/40-VirtualRacing) to (local) master
 
 ```
 (sds) rainer@neuron:~/dev/41-VirtualRacingRepos/40-VirtualRacing$ git remote
