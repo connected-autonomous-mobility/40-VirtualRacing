@@ -182,6 +182,7 @@ class RaceClient(SDClient):
         self.myspeed = 0 # rbx
         self.mylastspeed = 0 # rbx
         self.posx = 0
+        self.posy = 0
         self.posz = 0
 
     def on_msg_recv(self, json_packet):
@@ -193,20 +194,44 @@ class RaceClient(SDClient):
             imgString = json_packet["image"]
             
             # pln
+            cte        = json_packet["cte"]
             myspeed    = json_packet["speed"]
             mythrottle = json_packet["throttle"]
             mysteering = json_packet["steering_angle"]
-            myx = json_packet["pos_x"]
-            myz = json_packet["pos_z"]
+            myx        = json_packet["pos_x"]
+            myy        = json_packet["pos_y"]
+            myz        = json_packet["pos_z"]
             #print(myspeed) #-mythrottle*mysteering)
             self.mylastspeed = self.myspeed
             self.myspeed = myspeed
             self.posx = myx
+            self.posy = myy
             self.posz = myz
+
+            # store pilot/angle into user/angle 
+            myoutput_path = "./data/AI_tub_00_20-04-24/record_"+str(ix)+".json"
+            record["user/angle"]      = mysteering
+            record["user/throttle"]   = mythrottle 
+            print(record)           
+            try:
+                with open(myoutput_path, 'w') as fp:
+                    json.dump(record, fp)
+                    #print('wrote record:', record)
+            except TypeError:
+                print('troubles with record:', json_data)
+            except FileNotFoundError:
+                raise
+            except:
+                print("Unexpected error:", sys.exc_info()[0])
+                raise
+
+
             # pln
 
             image = Image.open(BytesIO(base64.b64decode(imgString)))
             self.last_image = np.asarray(image).astype(np.float32) * IMG_NORM_SCALE
+
+
 
     def send_controls(self, steering, throttle):
         p = { "msg_type" : "control",

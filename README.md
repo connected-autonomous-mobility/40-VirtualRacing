@@ -1,4 +1,4 @@
-# 40-VirtualRacing: The Parking Lot Nerds
+# 40-VirtualRacing: The Parking Lot Nerds Development Repository
 
 ![](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1774_115.png)
 
@@ -17,6 +17,9 @@ Thanks a lot to Ed & Tawn (Oakland), Nic & Paul (Ottawa), Dave (Ann Arbor), Lind
   <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_data.png" alt="drawing" width="300"/>
   <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/p11_track.png" alt="drawing" width="300"/>
 </p>
+
+
+
 
 
 ### 2 preparation
@@ -59,6 +62,26 @@ http://localhost:8887/drive
 And set mode to ```local pilot```
 
 ### 9 Races
+#### [First Ever Virtual Racing League @DIYrobocars, April 25th, 2020](https://youtu.be/BOzX-Bm0bk0)
+
+
+
+
+<p float="left">
+  
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/6E5AFF4A-5451-48A4-9A94-76E3E866379C.png" alt="drawing" width="300"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/362A3608-0214-4FBE-B048-71AEA1683AE5.png" alt="drawing" width="300"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/E572C649-CA33-40EE-8456-F95C59A8E4B4.png" alt="drawing" width="300"/>
+</p>
+
+
+<p float="left">
+  
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/A6C51FE6-457B-4244-82C0-470353C6990E.png" alt="drawing" width="300"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/182B7FFF-362B-4906-8CF0-88613AE0C27D.png" alt="drawing" width="300"/>
+  <img src="https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/images/1F064E3D-F780-4989-A6AA-57F255DC00F5.png" alt="drawing" width="300"/>
+</p>
+
 - [Japan](https://www.youtube.com/watch?v=ilvRFw7jCwY)
 
 ### 10 [Reinforcement Learning (very experimental!)](https://github.com/connected-autonomous-mobility/40-VirtualRacing/tree/master/ddqn)
@@ -70,5 +93,7 @@ And set mode to ```local pilot```
 - https://github.com/robocarstore/donkey-car-training-on-google-colab/blob/master/Donkey_Car_Training_using_Google_Colab.ipynb
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/Simulator_racer
+- https://github.com/Sashulik/DIYRobocars-Virtual-Racing-League (main repo)
+- https://github.com/hogenimushi/donkey_data
 
 

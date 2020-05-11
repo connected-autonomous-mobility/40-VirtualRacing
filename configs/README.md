@@ -5,9 +5,11 @@
 | Neuron   | Neuron | 5             | parkinglotnerds8c_AI_tub48.h5  | 10+       | 17.88        | 0.06      |
 | Paul   | donkey1| 5              | parkinglotnerds8.h5           | 13+      | 17.92        | 75       |
 | Paul   | Neuron | 5             | parkinglotnerds8c_AI_tub48.h5  | 8       | 17.95        | 75      |
+| Paul   | TawnTraining | 5             | parkinglotnerds8c_AI_tub48.h5  | 11+       | 17.98        | 85      |
 | Neuron   | Neuron | 5l             | parkinglotnerds8c_AI_tub48.h5  | 10       | 18.20        | 0.06      |
 | Tawn   | Paul   | manage.py      | ver02-slided200           | 3       | 18.26        | 80       |
 | Tawn   | donkey1| 5              | parkinglotnerds8.h5           | 21      | 18.34        | 80       |
+| Paul   | TawnTraining| 5              | parkinglotnerds8.h5           | 15+      | 18.43        | 75       |
 | Tawn   | colab  | 5              | parkinglotnerds8.h5           | 10      | 18.54        | 160       |
 | Tawn   | donkey1| 4              | parkinglotnerds8.h5           | 3       | 18.60        | 80       |
 | Tawn   | donkey1| 5              | paul-tub20-ver01.h5           | 4       | 18.78        | 80      |
@@ -16,6 +18,7 @@
 | Tawn   | donkey1| 0              | parkinglotnerds8.h5           | 13      | 19.46        | 80       |
 | Tawn   | Colab  | 5              | parkinglotnerds8.h5           | 10      | 19.50        | 160       |
 | Tawn   | Colab  | 0              | parkinglotnerds8.h5           | 7+      | 19.66        | 160      |
+| Paul   | TawnTraing  | 0              | parkinglotnerds8.h5           | 15+      | 19.73        | 85      |
 | Tawn   | Neuron | 0              | paul-tub20-ver01.h5           | 2       | 19.80        | 220      |
 | Tawn   | Colab  | 2              | parkinglotnerds8.h5           | 3       | 19.86        | 160      |
 | Tawn   | Colab  | 0              | parkinglotnerds14.h5          | 2       | 19.78        | 160      |
