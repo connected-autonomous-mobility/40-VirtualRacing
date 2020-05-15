@@ -92,6 +92,8 @@ And set mode to ```local pilot```
 - https://github.com/Maximellerbach/Virtual_Racing
 - https://github.com/robocarstore/donkey-car-training-on-google-colab/blob/master/Donkey_Car_Training_using_Google_Colab.ipynb
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar
+- https://github.com/Ottawa-Autonomous-Vehicle-Group/donkeycar-pln
+- https://github.com/Ottawa-Autonomous-Vehicle-Group/sdsandbox-pln
 - https://github.com/Ottawa-Autonomous-Vehicle-Group/Simulator_racer
 - https://github.com/Sashulik/DIYRobocars-Virtual-Racing-League (main repo)
 - https://github.com/hogenimushi/donkey_data
