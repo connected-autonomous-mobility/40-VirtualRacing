@@ -265,13 +265,20 @@ def race(model_path, host, name):
     # Create client
     client = RaceClient(model, (host, PORT))
 
+    # get scene scene name
+    #msg = '{ "msg_type" : "load_scene", "scene_name" : "generated_track" }'
+    msg = '{ "msg_type" : "get_scene_names" }'
+    client.send(msg)
+    time.sleep(1.0)
+
     # load scene
-    msg = '{ "msg_type" : "load_scene", "scene_name" : "generated_track" }'
+    #msg = '{ "msg_type" : "load_scene", "scene_name" : "generated_track" }'
+    msg = '{ "msg_type" : "load_scene", "scene_name" : "mountain_track" }'
     client.send(msg)
     time.sleep(1.0)
 
     # Car config
-    msg = '{ "msg_type" : "car_config", "body_style" : "dokney", "body_r" : "64", "body_g" : "64", "body_b" : "64", "car_name" : "%s", "font_size" : "100" }' % (name)
+    msg = '{ "msg_type" : "car_config", "body_style" : "car01", "body_r" : "0", "body_g" : "0", "body_b" : "205", "car_name" : "%s", "font_size" : "100" }' % (name)
     client.send(msg)
     time.sleep(0.2)
 
@@ -279,8 +286,8 @@ def race(model_path, host, name):
     AI_LAUNCH_DURATION = 2.7 #3.0            # the ai will output throttle for this many seconds
     AI_LAUNCH_THROTTLE = 1.7 #1.8 
     '''
-    #maxcount = int(2.7/0.2) #2.7s 20Hz
-    maxcount = 3
+    maxcount = int(2.0/0.2) #2.7s 20Hz
+    #maxcount = 3
     print("maxcount: ", maxcount)
     AI_START = True
     try:
