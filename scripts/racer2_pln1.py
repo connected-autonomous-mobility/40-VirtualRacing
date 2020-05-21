@@ -280,7 +280,7 @@ def race(model_path, host, name):
     AI_LAUNCH_THROTTLE = 1.7 #1.8 
     '''
     #maxcount = int(2.7/0.2) #2.7s 20Hz
-    maxcount = 5
+    maxcount = 0
     print("maxcount: ", maxcount)
     AI_START = True
     try:
