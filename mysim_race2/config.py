@@ -253,7 +253,7 @@ SIM_HOST = "127.0.0.1"              # when racing on virtual-race-league use hos
 SIM_ARTIFICIAL_LATENCY = 0          # this is the millisecond latency in controls. Can use useful in emulating the delay when useing a remote server. values of 100 to 400 probably reasonable.
 
 # Save location info from Simulator
-SIM_RECORD_LOCATION = False
+# SIM_RECORD_LOCATION = False
 
 
 #publish camera over network
