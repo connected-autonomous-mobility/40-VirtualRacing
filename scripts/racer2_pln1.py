@@ -259,8 +259,8 @@ def race(model_path, host, name):
 
     # Load keras model
     model = keras.models.load_model(model_path)
-    #model.compile(optimizer='adam', loss='mse')
-    #model.summary()
+    model.compile(optimizer='adam', loss='mse')
+    model.summary()
 
     # Create client
     client = RaceClient(model, (host, PORT))
