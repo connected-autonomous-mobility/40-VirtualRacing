@@ -1,6 +1,34 @@
 # Racing Scripts
 
+
+
+
 ## Carls Server
+
+### May, 22nd 2020
+```
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
+python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_8.h5 --name pln_r2_8
+
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
+python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_9.h5 --name pln_r2_9
+
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
+python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_8L.h5 --name pln_r2_8L
+
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
+python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_9L.h5 --name pln_r2_9L
+
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
+python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_4.h5 --name pln_r2_4
+
+(donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
+python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_4L.h5 --name pln_r2_4L
+
+
+```
+
+### old
 ```
 (donkey) heavy02011@donkey1:~/projects
 python 40*/scripts/racer2_pln1.py --host trainmydonkey.com --model 40*/mysim_race2/models/pln_r2_4.h5 --name pln_r2_4
