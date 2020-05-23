@@ -16,6 +16,7 @@ python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_8.h
 (donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
 python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_9.h5 --name pln_r2_9
 ```
+#### 26.52 (3 laps)
 ```
 (donkey) heavy02011@donkey1:~/projects/40-VirtualRacing$ 
 python scripts/racer2_pln1.py --host trainmydonkey.com --model models/pln_r2_8L.h5 --name pln_r2_8L
