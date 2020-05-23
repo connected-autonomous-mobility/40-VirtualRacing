@@ -318,5 +318,5 @@ if __name__ == '__main__':
     #race(model_path = args['--model'], host = args['--host'], name = args['--name'])
     mymodel = "../models/pln_r2_8.h5"
     myhost = "trainmydonky.com"
-    myname = model
+    myname = mymodel
     race(model_path = mymodel, host = myhost, name = myname)
