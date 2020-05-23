@@ -270,7 +270,7 @@ class RaceClient(SDClient):
 
 
 def race(model_path, host, name):
-    print("connecting model on server with name: ", model,_path, host, name)
+    print("connecting model on server with name: ", model_path, host, name)
 
     # Load keras model
     model = keras.models.load_model(model_path)
