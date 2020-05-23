@@ -286,7 +286,7 @@ def race(model_path, host, name):
     AI_LAUNCH_DURATION = 2.7 #3.0            # the ai will output throttle for this many seconds
     AI_LAUNCH_THROTTLE = 1.7 #1.8 
     '''
-    maxcount = int(3.0/0.2) #2.7s 20Hz
+    maxcount = int(3.5/0.2) #2.7s 20Hz
     #maxcount = 3
     print("maxcount: ", maxcount)
     AI_START = True
