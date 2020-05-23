@@ -270,6 +270,7 @@ class RaceClient(SDClient):
 
 
 def race(model_path, host, name):
+    print("connecting model on server with name: ", model,_path, host, name)
 
     # Load keras model
     model = keras.models.load_model(model_path)
@@ -280,7 +281,7 @@ def race(model_path, host, name):
     client = RaceClient(model, (host, PORT))
 
     # load scene
-    msg = '{ "msg_type" : "load_scene", "scene_name" : "generated_track" }'
+    msg = '{ "msg_type" : "load_scene", "scene_name" : "mountain_track" }'
     client.send(msg)
     time.sleep(1.0)
 
