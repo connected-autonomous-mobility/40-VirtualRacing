@@ -26,3 +26,6 @@ Fast-forward
  create mode 100644 scripts/joydrive.py
 (sds) rainer@neuron:~/dev/41-(sds) rainer@neuron:~/dev/41-VirtualRacingRepos/40-VirtualRacing$ git push
 ```
+
+## multiple repositories to push to
+- https://stackoverflow.com/questions/11690709/can-a-project-have-multiple-origins#11690868
