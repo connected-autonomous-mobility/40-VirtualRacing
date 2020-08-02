@@ -11,7 +11,7 @@
 | wheel radius           | m    | 0.32           | 0.32                | needs confirmation |
 | car track width, front | m    | 1.396          | 1.398               |                    |
 | car track width, rear  | m    | 1.396          | 1.380               |                    |
-| braking torque         | Nm   |                | 400                 |                    |
+| braking torque         | Nm   | 400            | 400                 |                    |
 | motor torque           | Nm   | 300            | 450                 |                    |
 | maximum speed          | m/s  | 30             | 50                  |                    |
 | maximum steering angle | deg  | 25             | 25                  | tricky: in the code 16, after spawning maxSteer=45, but checking with joystick = 25 |
