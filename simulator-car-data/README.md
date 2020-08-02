@@ -19,7 +19,7 @@
 | angular drag           | ---  | 0.05          |                    |
 | local center of mass   | m    | (0, -0.122, 0.085) | XYZ Unity left-handed coordinate system |
 |                        |      |               |                    |
-| m_ForwardFriction      |      |               |                    |
+| *m_ForwardFriction*      |      |               |                    |
 | m_ExtremumSlip         | ---  | 0.4           |                    |
 | m_ExtremumValue        | ---  | 1             |                    |
 | m_AsymptoteSlip        | ---  | 0.8           |                    |
