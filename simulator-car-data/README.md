@@ -40,3 +40,11 @@ sources for data & car:
 ## 3. Coordinate System in Unity
 
 ![Unity Coordinate System](https://github.com/connected-autonomous-mobility/40-VirtualRacing/blob/master/simulator-car-data/Unity-Donkey-CoordinateSystem.png)
+
+## 4. Spawn coordinates
+| race  | track  | XYZ |
+|-------|--------|-----|
+| May   | right  |  51.31988 5.040384 35.09036 |
+| May   | left   |  57.31993 5.076586 35.09643 |
+| Aug   | right  |  51.31872 5.063416 50.2117  |
+| Aug   | left   |  57.31234 5.312198 50.1867  |
