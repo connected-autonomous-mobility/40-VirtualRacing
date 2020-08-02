@@ -4,7 +4,7 @@
 
 ## 2. Car Data as of August, 2nd, 2020
 
-| data                   | unit | simulator     | remark             |
+| data                   | unit | generated road| remark             |
 |------------------------|------|---------------|--------------------|     
 | mass                   | kg   | 500           |                    |
 | length                 | m    | 1.7           |                    |
