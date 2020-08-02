@@ -8,16 +8,16 @@
 |------------------------|------|----------------|---------------------|--------------------|     
 | mass                   | kg   | 750            | 500                 |                    |
 | length                 | m    | 1.7            | 1.7                 |                    |
-| wheel radius           | m    |                | 0.32                | needs confirmation |
-| car track width, front | m    |                | 1.398               |                    |
-| car track width, rear  | m    |                | 1.380               |                    |
+| wheel radius           | m    | 0.32           | 0.32                | needs confirmation |
+| car track width, front | m    | 1.396          | 1.398               |                    |
+| car track width, rear  | m    | 1.396          | 1.380               |                    |
 | braking torque         | Nm   |                | 400                 |                    |
 | motor torque           | Nm   | 300            | 450                 |                    |
 | maximum speed          | m/s  | 30             | 50                  |                    |
 | maximum steering angle | deg  | 25             | 25                  | tricky: in the code 16, after spawning maxSteer=45, but checking with joystick = 25 |
 | drag                   | ---  | 0.05           | 0.1                 |                    |
 | angular drag           | ---  | 0.05           | 0.05                |                    |
-| local center of mass   | m    |                | (0, -0.122, 0. 085) | XYZ Unity left-handed coordinate system |
+| local center of mass   | m    | (0, -0.4, -0.1)| (0, -0.122, 0. 085) | XYZ Unity left-handed coordinate system |
 |                        |      |                |                     |                    |
 | *m_ForwardFriction*    |      |                |                     | [source](https://github.com/tawnkramer/sdsandbox/blob/fecf2f64c11a82f9b088ccbf0f734dfd6d8dea3c/sdsim/Assets/Prefabs/car.prefab) |
 | m_ExtremumSlip         | ---  |                | 0.4                 |                    |
