@@ -7,6 +7,7 @@
 | data                   | unit | simulator     | remark             |
 |------------------------|------|---------------|--------------------|     
 | mass                   | kg   | 500           |                    |
+| length                 | m    | 1.7           |                    |
 | wheel radius           | m    | 0.32          | needs confirmation |
 | car track width, front | m    | 1.398         |                    |
 | car track width, rear  | m    | 1.380         |                    |
