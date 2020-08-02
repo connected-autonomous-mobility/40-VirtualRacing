@@ -19,20 +19,21 @@
 | angular drag           | ---  | 0.05           | 0.05                |                    |
 | local center of mass   | m    | (0, -0.4, -0.1)| (0, -0.122, 0. 085) | XYZ Unity left-handed coordinate system |
 |                        |      |                |                     |                    |
-| *m_ForwardFriction*    |      |                |                     | [source](https://github.com/tawnkramer/sdsandbox/blob/fecf2f64c11a82f9b088ccbf0f734dfd6d8dea3c/sdsim/Assets/Prefabs/car.prefab) |
-| m_ExtremumSlip         | ---  |                | 0.4                 |                    |
-| m_ExtremumValue        | ---  |                | 1                   |                    |
-| m_AsymptoteSlip        | ---  |                | 0.8                 |                    |
-| m_AsymptoteValue       | ---  |                | 0.5                 |                    |
-| m_Stiffness            | ---  |                | 1                   |                    |
+| *m_ForwardFriction*    |      |                |                     |                    |
+| m_ExtremumSlip         | ---  | 0.1            | 0.4                 |                    |
+| m_ExtremumValue        | ---  | 2.75           | 1                   |                    |
+| m_AsymptoteSlip        | ---  | 0.1            | 0.8                 |                    |
+| m_AsymptoteValue       | ---  | 3              | 0.5                 |                    |
+| m_Stiffness            | ---  | 0.36           | 1                   |                    |
 | *m_SidewaysFriction*   |      |                |                     |                    |     
-| m_ExtremumSlip         | ---  |                | 0.2                 |                    |
-| m_ExtremumValue        | ---  |                | 1                   |                    |
-| m_AsymptoteSlip        | ---  |                | 0.5                 |                    |
-| m_AsymptoteValue       | ---  |                | 0.75                |                    |
-| m_Stiffness            | ---  |                | 1                   |                    |
+| m_ExtremumSlip         | ---  | 0.1            | 0.2                 |                    |
+| m_ExtremumValue        | ---  | 2.75           | 1                   |                    |
+| m_AsymptoteSlip        | ---  | 0.1            | 0.5                 |                    |
+| m_AsymptoteValue       | ---  | 3              | 0.75                |                    |
+| m_Stiffness            | ---  | 0.46           | 1                   |                    |
 
-source data mountain track [Donkey_heavy_Naisy.prefab](https://github.com/tawnkramer/sdsandbox/blob/c0118fd7a52a865dba6d1bc50568c5dcfabf716f/sdsim/Assets/Prefabs/Donkey_heavy_Naisy.prefab)
+source "generated track" data: [car.prefab](https://github.com/tawnkramer/sdsandbox/blob/fecf2f64c11a82f9b088ccbf0f734dfd6d8dea3c/sdsim/Assets/Prefabs/car.prefab)
+source data mountain track: [Donkey_heavy_Naisy.prefab](https://github.com/tawnkramer/sdsandbox/blob/c0118fd7a52a865dba6d1bc50568c5dcfabf716f/sdsim/Assets/Prefabs/Donkey_heavy_Naisy.prefab)
 
 
 ## 3. Coordinate System in Unity
