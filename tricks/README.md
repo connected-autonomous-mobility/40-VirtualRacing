@@ -29,3 +29,22 @@ Fast-forward
 
 ## multiple repositories to push to
 - https://stackoverflow.com/questions/11690709/can-a-project-have-multiple-origins#11690868
+
+## update repo https://discordapp.com/channels/662098530411741184/694603353061195916/737554731295309864
+```
+cd ~/projects/donkeycar
+git checkout master
+git pull
+cd ~/projects/gym-donkeycar
+git checkout master
+git pull
+cd ~/mycar
+donkey update
+```
+
+### add to myconfig.py
+```
+GYM_CONF["racer_name"] = "Your Name"
+GYM_CONF["country"] = "USA"
+GYM_CONF["bio"] = "I race robots."
+```
