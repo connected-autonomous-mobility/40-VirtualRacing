@@ -48,3 +48,8 @@ GYM_CONF["racer_name"] = "Your Name"
 GYM_CONF["country"] = "USA"
 GYM_CONF["bio"] = "I race robots."
 ```
+
+## clone environment
+```
+conda create --name myclone --clone root
+```
