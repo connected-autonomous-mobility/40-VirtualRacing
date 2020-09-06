@@ -4,3 +4,9 @@
 carla_part.py 
 ```
 
+## 1 Installation
+```
+create new conda env
+source activate sds4_carla
+```
+
